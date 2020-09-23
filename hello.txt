@@ -2,4 +2,5 @@ Hello. I am a seal.
 //new animal
 I am owl.
 
-new owl.
+//new owl
+spotted owl.
