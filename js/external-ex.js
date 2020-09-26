@@ -10,5 +10,5 @@
 //var deleteYear = confirm("Do you want to delete 2020?");
 //console.log(deleteYear);
 
-//var favoriteAnimal = prompt("what is your favorite animal?");
-//console.log("your favorite animal is " + favoriteAnimal);
+var favoriteAnimal = prompt("what is your favorite animal?);
+console.log("your favorite animal is " + (favoriteAnimal));
