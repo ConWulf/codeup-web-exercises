@@ -1,3 +1,4 @@
+(function(){
 "use strict";
 //console.log("Hello from external js");
 
@@ -22,7 +23,8 @@
 //The little mermaid (for 3 days), Brother Bear (for 5 days, they love it), and Hercules (1 day, you don't
 //know yet if they're going to like it). If price for a movie per day is $3, how much will you have to pay?
 
-// using only var, prompt, and alert
+// using only var and prompt and alert
+
 // var daysRentedtlm = parseInt(prompt("How many days would you like to rent The Little Mermaid?"));
 // var daysRentedbb = parseInt(prompt("How many days would you like to rent Brother Bear?"));
 // var daysRentedherc = parseInt(prompt("How many days would you like to rent Hercules?"));
@@ -32,31 +34,34 @@
 // alert("your total cost is $" + (totalDaysRented  * 3).toFixed(2));
 
 // using an array and for loop
-/*var movies = ["The Little Mermaid", "Brother", "Hercules"];
-var days = []
-var startDays = 0
-for (var i = 0; i < movies.length; i++) {
-    var askDaysRented = prompt("How many days would you like to rent " + movies[i]);
-    while ((isNaN(askDaysRented) || askDaysRented === "")) {
-        alert("Please enter a number")
-        askDaysRented = prompt("How many days would you like to rent " + movies[i]);
-    }
-    while (askDaysRented === "0") {
-        alert("Please enter a number greater than 0");
-        askDaysRented = prompt("How many days would you like to rent " + movies[i]);
-    }
-    if (askDaysRented !== null) {
-        days.push(askDaysRented);
-    } else {
-        days.push(0)
-    }
-}
-        for (var j = 0; j < days.length; j++) {
-                startDays += parseInt(days[j]);
-                var totalCost = startDays;
-        }
-        alert("your total cost is " + (totalCost * 3).toFixed(2));*/
+
+// var movies = ["The Little Mermaid", "Brother", "Hercules"];
+// var days = []
+// var startDays = 0
+// for (var i = 0; i < movies.length; i++) {
+//     var askDaysRented = prompt("How many days would you like to rent " + movies[i]);
+//     while ((isNaN(askDaysRented) || askDaysRented === "")) {
+//         alert("Please enter a number")
+//         askDaysRented = prompt("How many days would you like to rent " + movies[i]);
+//     }
+//     while (askDaysRented === "0") {
+//         alert("Please enter a number greater than 0");
+//         askDaysRented = prompt("How many days would you like to rent " + movies[i]);
+//     }
+//     if (askDaysRented !== null) {
+//         days.push(askDaysRented);
+//     } else {
+//         days.push(0)
+//     }
+// }
+//         for (var j = 0; j < days.length; j++) {
+//                 startDays += parseInt(days[j]);
+//                 var totalCost = startDays;
+//         }
+//         alert("your total cost is " + (totalCost * 3).toFixed(2));
+
 //function for choosing a movie from an array
+
 // var moviesRented = [];
 // function rentals() {
 //     var movies = ["the little mermaid", "brother bear", "hercules", "captain marvel",
@@ -83,7 +88,7 @@ for (var i = 0; i < movies.length; i++) {
 //
 //         }
 // }
-// (function verifyRentedMovies() {
+// function verifyRentedMovies() {
 //     rentals();
 //     var verifyMovies = confirm("Verify the movies you want to rent are: " + moviesRented.join(", "));
 //     var rentalDays;
@@ -102,51 +107,53 @@ for (var i = 0; i < movies.length; i++) {
 //         alert("your total cost is $" + (totalCost * 3).toFixed(2));
 //     }
 //
-// })();
+// }
+//     verifyRentedMovies();
 
 //3-2
 //Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a
 //different rate per hour. Google pays $400, Amazon $380, and Facebook $350. How much will you
 //receive in payment for this week? You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.
-/*var googlePay = 400;
-var amazonPay = 380;
-var facebookPay = 350;
-var googleHours = prompt("Hours worked for google.");
-if (googleHours === null) {
-    alert("goodbye");
-} else {
-    var googleTotalPay = googlePay * parseInt(googleHours);
-}
-while (isNaN(googleHours)) {
-    alert("Please enter a number");
-    googleHours = prompt("Hours worked for google.");
 
-
-}
-var amazonHours = prompt("Hours Worked For Amazon.");
-    if (amazonHours === null) {
-        alert("goodbye");
-    } else {
-        var amazonTotalPay = amazonPay * parseInt(amazonHours);
-    }
-while (isNaN(amazonHours)) {
-    alert("Please enter a number");
-    amazonHours = prompt("Hours Worked For Amazon.");
-}
-var facebookHours = prompt("Hours worked for Facebook.");
-if (facebookHours === null) {
-    alert("goodbye");
-} else {
-    var facebookTotalPay = facebookPay * parseInt(facebookHours);
-}
-while (isNaN(facebookHours)) {
-    alert("Please enter a number");
-    facebookHours = prompt("Hours worked for Facebook.");
-}
- if (googleHours !== null && amazonHours !== null && facebookHours !== null) {
-        var totalWeeklyPay = googleTotalPay + amazonTotalPay + facebookTotalPay;
-        alert("Your total pay is " + totalWeeklyPay);
-}*/
+// var googlePay = 400;
+// var amazonPay = 380;
+// var facebookPay = 350;
+// var googleHours = prompt("Hours worked for google.");
+// if (googleHours === null) {
+//     alert("goodbye");
+// } else {
+//     var googleTotalPay = googlePay * parseInt(googleHours);
+// }
+// while (isNaN(googleHours)) {
+//     alert("Please enter a number");
+//     googleHours = prompt("Hours worked for google.");
+//
+//
+// }
+// var amazonHours = prompt("Hours Worked For Amazon.");
+//     if (amazonHours === null) {
+//         alert("goodbye");
+//     } else {
+//         var amazonTotalPay = amazonPay * parseInt(amazonHours);
+//     }
+// while (isNaN(amazonHours)) {
+//     alert("Please enter a number");
+//     amazonHours = prompt("Hours Worked For Amazon.");
+// }
+// var facebookHours = prompt("Hours worked for Facebook.");
+// if (facebookHours === null) {
+//     alert("goodbye");
+// } else {
+//     var facebookTotalPay = facebookPay * parseInt(facebookHours);
+// }
+// while (isNaN(facebookHours)) {
+//     alert("Please enter a number");
+//     facebookHours = prompt("Hours worked for Facebook.");
+// }
+//  if (googleHours !== null && amazonHours !== null && facebookHours !== null) {
+//         var totalWeeklyPay = googleTotalPay + amazonTotalPay + facebookTotalPay;
+//         alert("Your total pay is " + totalWeeklyPay);
+// }
 
 // var faceBookHours = parseInt(prompt("how many hours did you work for Facebook?"));
 // var gooleHours = parseInt(prompt("how many hours did you work for google?"));
@@ -216,13 +223,14 @@ while (isNaN(facebookHours)) {
 //     alert("This offer has expired");
 // }
 
-var itemsBought = parseInt(prompt("how many items would you like to buy? "));
-var offerIsExpired = confirm("is this offer expired?");
-var premiumMember = confirm("are you a premium member");
-var validOffer = (itemsBought > 2 && !premiumMember && !offerIsExpired );
-var premiumMemberOffer = (premiumMember && !offerIsExpired );
-if (validOffer || premiumMemberOffer) {
-alert("you get 20% off");
-} else {
-    alert("this offer is invalid")
-}
+// var itemsBought = parseInt(prompt("how many items would you like to buy? "));
+// var offerIsExpired = confirm("is this offer expired?");
+// var premiumMember = confirm("are you a premium member");
+// var validOffer = (itemsBought > 2 && !premiumMember && !offerIsExpired );
+// var premiumMemberOffer = (premiumMember && !offerIsExpired );
+// if (validOffer || premiumMemberOffer) {
+// alert("you get 20% off");
+// } else {
+//     alert("this offer is invalid")
+// }
+})();
