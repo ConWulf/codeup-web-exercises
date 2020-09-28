@@ -1,5 +1,5 @@
 "use strict";
-console.log("Hello from external js");
+//console.log("Hello from external js");
 
 //Exercise 1:
 //Use the alert function to show a message that says 'Welcome to my Website!'
@@ -10,8 +10,8 @@ console.log("Hello from external js");
 //Use a prompt to ask for the user's favorite color. Use the user's response
 // to alert a message that says that the color entered is your favorite color too.
 
-//var favColor = prompt("What is your favorite color?");
-//alert("Really, " + favColor + " is my favorite color too!");
+// var favColor = prompt("What is your favorite color?");
+// alert("Really, " + favColor + " is my favorite color too!");
 
 //Exercise 3
 //Complete exercise 3 from the previous lesson,
@@ -23,11 +23,11 @@ console.log("Hello from external js");
 //know yet if they're going to like it). If price for a movie per day is $3, how much will you have to pay?
 
 // using only var, prompt, and alert
-/*var daysRentedtlm = prompt("How many days would you like to rent The Little Mermaid?");
-var daysRentedbb = prompt("How many days would you like to rent Brother Bear?");
-var daysRentedherc = prompt("How many days would you like to rent Hercules?");
+/*var daysRentedtlm = parseInt(prompt("How many days would you like to rent The Little Mermaid?"));
+var daysRentedbb = parseInt(prompt("How many days would you like to rent Brother Bear?"));
+var daysRentedherc = parsInt(prompt("How many days would you like to rent Hercules?"));
 
-var totalDaysRented = (parseInt(daysRentedtlm) + parseInt(daysRentedbb) + parseInt(daysRentedherc));
+var totalDaysRented = (daysRentedtlm + daysRentedbb + daysRentedherc);
 
 alert("your total cost is " + (totalDaysRented  * 3).toFixed(2));*/
 
@@ -57,7 +57,6 @@ for (var i = 0; i < movies.length; i++) {
         }
         alert("your total cost is " + (totalCost * 3).toFixed(2));*/
 //function for choosing a movie from an array
-
 /*var moviesRented = [];
 function rentals() {
     var movies = ["the little mermaid", "brother bear", "hercules", "captain marvel",
@@ -147,10 +146,19 @@ while (isNaN(facebookHours)) {
         alert("Your total pay is " + totalWeeklyPay);
 }*/
 
+// var faceBookHours = parseInt(prompt("how many hours did you work for Facebook?"));
+// var gooleHours = parseInt(prompt("how many hours did you work for google?"));
+// var amazonHours = parseInt(prompt("how many hours did you work for amazon?"));
+// var faceBookPay = parseInt(prompt("What is your pay for Facebook?"));
+// var googlePay = parseInt(prompt("What is your pay for google?"));
+// var amazonPay = parseInt(prompt("What is your pay for Amazon?"));
+//
+// var  totalPay = ((faceBookHours * faceBookPay) + (gooleHours * googlePay) + (amazonHours * amazonPay)).toFixed(2);
+// alert(totalPay);
+
 //3
 //A student can be enrolled in a class only if the class is not full
 //and the class schedule does not conflict with her current schedule.
-
 /*var currentClassSize = Math.floor(Math.random() * 60);
 var maxClassSize = Math.floor(Math.random() * 40);
 var classFull = currentClassSize >= maxClassSize;
@@ -165,7 +173,14 @@ if (canEnroll) {
     } else if (!noConflicts) {
         confirm("You have a conflicting class");
     }*/
-
+// var conflict = confirm("Does this class conflict with a current one");
+// var classFull = confirm("is this class full");
+// var enrolled = !classFull && !conflict
+// if (enrolled) {
+//     alert("congrats! you are enrolled");
+// } else {
+//     alert("you cannot enroll at this time");
+// }
 
 //4
 //A product offer can be applied only if a person buys more than 2 items,
@@ -195,3 +210,14 @@ if (!offerExpired && didByTwo && !isPremiumMember) {
 } else {
     alert("This offer has expired");
 }*/
+
+// var itemsBought = parseInt(prompt("how many items would you like to buy? "));
+// var offer = confirm("is this offer expired?");
+// var premiumMember = confirm("are you a premium member");
+// var validOffer = (itemsBought > 2 && !premiumMember && offer);
+// var premiumMemberOffer = (premiumMember && offer);
+// if (validOffer || premiumMemberOffer) {
+// alert("you get 20% off");
+// } else {
+//     alert("this offer is invalid")
+// }
