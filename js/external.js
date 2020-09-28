@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 console.log("Hello from external js");
 
 //Exercise 1:
@@ -32,7 +32,7 @@ var totalDaysRented = (parseInt(daysRentedtlm) + parseInt(daysRentedbb) + parseI
 alert("your total cost is " + (totalDaysRented  * 3).toFixed(2));*/
 
 // using an array and for loop
-var movies = ["The Little Mermaid", "Brother", "Hercules"];
+/*var movies = ["The Little Mermaid", "Brother", "Hercules"];
 var days = []
 var startDays = 0
 for (var i = 0; i < movies.length; i++) {
@@ -47,55 +47,61 @@ for (var i = 0; i < movies.length; i++) {
     }
     if (askDaysRented !== null) {
         days.push(askDaysRented);
+    } else {
+        days.push(0)
     }
 }
-    for (var j = 0; j < days.length; j++) {
-        startDays += parseInt(days[j]);
-        var totalCost = startDays;
-    }
-    alert("your total cost is " + (totalCost * 3).toFixed(2));
-
+        for (var j = 0; j < days.length; j++) {
+                startDays += parseInt(days[j]);
+                var totalCost = startDays;
+        }
+        alert("your total cost is " + (totalCost * 3).toFixed(2));*/
 //function for choosing a movie from an array
 
-/*var movies = ["the little mermaid", "brother bear", "hercules", "captain marvel",
-    "hitchhikers guide to theGalaxy", "the addams family"];
-var moviesRented = [];
-
-function rentals(movies) {
+/*var moviesRented = [];
+function rentals() {
+    var movies = ["the little mermaid", "brother bear", "hercules", "captain marvel",
+        "hitchhikers guide to the Galaxy", "the addams family"];
+    var askForNextMovie;
+    var verify;
     for (var i = 0; i < movies.length; i++) {
-            var verify = confirm("would you like to rent " + movies[i]);
+             verify = confirm("would you like to rent " + movies[i]);
         while (verify) {
                 moviesRented.push(movies[i]);
-                var askForNextMovie = confirm("would you like to rent another movie?");
-                if (askForNextMovie === true) {
+            if (movies[i] === movies[movies.length - 1]) {
+                break;
+            } else {
+                 askForNextMovie = confirm("would you like to rent another movie?");
+            }
+
+                if (askForNextMovie) {
                     verify = confirm("would you like to rent " + movies[++i]);
                 } else {
                     return moviesRented
                 }
 
                 }
-        if (!verify){
-            break;
-            }
+
         }
 }
-
 (function verifyRentedMovies() {
-    rentals(movies);
+    rentals();
     var verifyMovies = confirm("Verify the movies you want to rent are: " + moviesRented.join(", "));
+    var rentalDays;
     if (!verifyMovies) {
    alert ("goodbye");
     } else {
-        for (var i = 0; i < moviesRented.length; i++) {
-        var rentalDays = prompt ("How many days would you like to rent" + moviesRented[i]);
-        }
-        while (isNaN(parseInt(rentalDays))) {
-            alert("please enter a number");
+        for (var j = 0; j < moviesRented.length; j++) {
+            rentalDays = prompt ("How many days would you like to rent " + moviesRented[j]);
+            while (isNaN(rentalDays) || rentalDays === "" || rentalDays === "0") {
+                alert("please enter a number greater than 0");
+                rentalDays = prompt ("How many days would you like to rent " + moviesRented[j]);
+            }
+
         }
     }
+
 })();*/
-
-
 
 //2
 //Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a
@@ -139,7 +145,6 @@ while (isNaN(facebookHours)) {
  if (googleHours !== null && amazonHours !== null && facebookHours !== null) {
         var totalWeeklyPay = googleTotalPay + amazonTotalPay + facebookTotalPay;
         alert("Your total pay is " + totalWeeklyPay);
-
 }*/
 
 //3
@@ -159,10 +164,12 @@ if (canEnroll) {
         confirm("This class is full");
     } else if (!noConflicts) {
         confirm("You have a conflicting class");
-    }
-console.log("current size " + currentClassSize);
-console.log("max size " + maxClassSize);
-console.log("schedule " + conflicts); */
+    }*/
+
+
+//4
+//A product offer can be applied only if a person buys more than 2 items,
+//and the offer has not expired. Premium members do not need to buy a specific amount of products.
 
 /*var itemsBought = Math.floor(Math.random() * 6) + 1;
 var didByTwo = itemsBought > 2
