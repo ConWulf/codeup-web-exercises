@@ -4,11 +4,15 @@
 
 3. use git checkout -b branch-name to create and checkout a new branch
 
-4. work on what you need to in that branch **always at least commit work on the branch you are working on before
-switching branches**
+4. work on what you need to in that branch
 
-5. create a pull request by clicking the link in the terminal or clicking the branch link in the terminal.
+5. add and commit work to the branch. **always at least commit work on the branch
+you are working on before switching branches**he
 
-6. merge the branch with the master branch.
+6. push work to the branch using git push origin branch-name
 
-7. pull from master again to update your local files.
+7. create a pull request by clicking the link in the terminal or clicking the branch link in the terminal.
+
+8. merge the branch with the master branch.
+
+9. pull from master again to update your local files.
