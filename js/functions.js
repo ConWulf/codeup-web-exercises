@@ -69,7 +69,16 @@ function isTwo(x) {
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(x=0, y=0) {
-        return x * y;
+        if (x >= 1 && x <= 9) {
+            x /= 10;
+            return x * y;
+        } else if (x > 9){
+            x /= 100
+            return x * y;
+        } else {
+            return x * y;
+        }
+
     }
 /**
  * TODO:
@@ -77,10 +86,10 @@ function calculateTip(x=0, y=0) {
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-// var totalBill = parseFloat(prompt("What is your total bill?"));
-// var tip = parseFloat(prompt("What is your tip?"));
-// var tipAmount = calculateTip(totalBill, tip);
-// alert("your tip is $" + tipAmount.toFixed(2));
+var totalBill = parseFloat(prompt("What is your total bill?"));
+var tip = parseFloat(prompt("What is your tip?"));
+var tipAmount = calculateTip(tip, totalBill);
+alert("your tip is $" + tipAmount.toFixed(2));
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -98,14 +107,14 @@ function calculateTip(x=0, y=0) {
 var price = parseFloat(prompt("what is the price?"));
 var discount = parseFloat(prompt("what is the discount?"));
 function applyDiscount(x=0, y=0) {
-    if (discount >= 1 && discount <= 9) {
-      discount /= 10;
-      return price - (discount * price);
-    } else if (discount > 9){
-        discount /= 100
-        return price - (discount * price);
+    if (y >= 1 && y <= 9) {
+      y /= 10;
+      return x - (x * y);
+    } else if (y > 9){
+        y /= 100
+        return x - (y * x);
     } else {
-        return price - (discount * price)
+        return x - (y * x)
     }
 
 }
