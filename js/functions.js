@@ -68,15 +68,15 @@ function isTwo(x) {
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(x=0, y=0) {
-        if (x >= 1 && x <= 9) {
-            x /= 10;
-            return x * y;
-        } else if (x > 9){
-            x /= 100
-            return x * y;
+function calculateTip(tip=0, total=0) {
+        if (tip >= 1 && tip <= 9) {
+            tip /= 10;
+            return tip * total;
+        } else if (tip > 9){
+            tip /= 100
+            return tip * total;
         } else {
-            return x * y;
+            return tip * total;
         }
 
     }
@@ -106,19 +106,20 @@ alert("your tip is $" + tipAmount.toFixed(2));
  */
 var price = parseFloat(prompt("what is the price?"));
 var discount = parseFloat(prompt("what is the discount?"));
-function applyDiscount(x=0, y=0) {
-    if (y >= 1 && y <= 9) {
-      y /= 10;
-      return x - (x * y);
-    } else if (y > 9){
-        y /= 100
-        return x - (y * x);
+function applyDiscount(prodPrice=0, prodDiscount=0) {
+    //var finalCost = prodPrice - (prodDiscount * prodPrice)
+    if (prodDiscount >= 1 && prodDiscount <= 9) {
+        prodDiscount /= 10;
+      return prodPrice - (prodDiscount * prodPrice);
+    } else if (prodDiscount > 9){
+        prodDiscount /= 100
+        return prodPrice - (prodDiscount * prodPrice);
     } else {
-        return x - (y * x)
+        return prodPrice - (prodDiscount * prodPrice);
     }
 
 }
 
     var finalPrice = applyDiscount(price, discount);
-alert("your discount is $ " + finalPrice);
+alert("your discount is $" + (finalPrice.toFixed(2)));
 })();
