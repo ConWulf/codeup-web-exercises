@@ -15,4 +15,6 @@ you are working on before switching branches**he
 
 8. merge the branch with the master branch.
 
-9. pull from master again to update your local files.
+9. pull new code merged to master again to update your local files.
+
+--use git branch to check what branch you are on, and git checkout to switch branches.
