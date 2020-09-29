@@ -1,0 +1,14 @@
+1. check if on master branch (or what other branch you are on)
+
+2. pull from master (git pull origin master) to ensure all code on local computer is up to date;
+
+3. use git checkout -b branch-name to create and checkout a new branch
+
+4. work on what you need to in that branch **always at least commit work on the branch you are working on before
+switching branches**
+
+5. create a pull request by clicking the link in the terminal or clicking the branch link in the terminal.
+
+6. merge the branch with the master branch.
+
+7. pull from master again to update your local files.
