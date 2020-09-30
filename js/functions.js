@@ -108,7 +108,7 @@ var price = parseFloat(prompt("what is the price?"));
 var discount = parseFloat(prompt("what is the discount?"));
 function applyDiscount(prodPrice=0, prodDiscount=0) {
     //var finalCost = prodPrice - (prodDiscount * prodPrice)
-    if (prodDiscount >= 1 && prodDiscount <= 9) {
+    if (prodDiscount > 1 && prodDiscount <= 9) {
         prodDiscount /= 10;
       return prodPrice - (prodDiscount * prodPrice);
     } else if (prodDiscount > 9){
