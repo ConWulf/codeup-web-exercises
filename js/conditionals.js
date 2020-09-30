@@ -101,23 +101,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 
-function calculateTotal(luckyNumber, total = 0) {
-    switch (luckyNumber) {
+function calculateTotal(luckyNum, total = 0) {
+    var discountPrice;
+    switch (luckyNum) {
         case 0:
-            return total;
+            discountPrice = total;
+            break;
         case 1:
-            return total - (total * 0.1);
+            discountPrice = total - (total * 0.1);
+            break;
         case 2:
-            return total - (total * 0.25);
+            discountPrice = total - (total * 0.25);
+            break;
         case 3:
-            return total - (total * 0.35);
+            discountPrice = total - (total * 0.35);
+            break;
         case 4:
-            return total - (total * 0.5);
+            discountPrice = total - (total * 0.5);
+            break;
         default:
-            return total - total;
+            discountPrice = total - total;
     }
+    return discountPrice;
 }
-    console.log(calculateTotal(1, 100));
+    console.log(calculateTotal(2, 100));
 
     /**
  * TODO:
@@ -127,15 +134,15 @@ function calculateTotal(luckyNumber, total = 0) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-var bill = parseFloat(prompt("what is your bill?"));
-    if(isNaN(bill)) {
-        alert("you did not enter a number.")
-    }else {
-        alert(" your lucky number is: " + luckyNumber);
-        alert("your price before discount: $" + bill.toFixed(2));
-        alert("your price after discount: $" + (calculateTotal(luckyNumber, bill)).toFixed(2));
-    }
+// var luckyNumber = Math.floor(Math.random() * 6);
+// var bill = parseFloat(prompt("what is your bill?"));
+//     if(isNaN(bill)) {
+//         alert("you did not enter a number.")
+//     }else {
+//         alert(" your lucky number is: " + luckyNumber);
+//         alert("your price before discount: $" + bill.toFixed(2));
+//         alert("your price after discount: $" + (calculateTotal(luckyNumber, bill)).toFixed(2));
+//     }
 
 /**
  * TODO:
