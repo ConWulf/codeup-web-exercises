@@ -134,15 +134,16 @@ function calculateTotal(luckyNum, total = 0) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var bill = parseFloat(prompt("what is your bill?"));
-//     if(isNaN(bill)) {
-//         alert("you did not enter a number.")
-//     }else {
-//         alert(" your lucky number is: " + luckyNumber);
-//         alert("your price before discount: $" + bill.toFixed(2));
-//         alert("your price after discount: $" + (calculateTotal(luckyNumber, bill)).toFixed(2));
-//     }
+var luckyNumber = Math.floor(Math.random() * 6);
+var bill = parseFloat(prompt("what is your bill?"));
+var billAfterDiscount = (calculateTotal(luckyNumber, bill)).toFixed(2)
+    if(isNaN(bill)) {
+        alert("you did not enter a number.")
+    }else {
+        alert(" your lucky number is: " + luckyNumber);
+        alert("your price before discount: $" + bill.toFixed(2));
+        alert("your price after discount: $" + billAfterDiscount);
+    }
 
 /**
  * TODO:
