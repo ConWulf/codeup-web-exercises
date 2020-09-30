@@ -134,16 +134,16 @@ function calculateTotal(luckyNum, total = 0) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-var bill = parseFloat(prompt("what is your bill?"));
-var billAfterDiscount = (calculateTotal(luckyNumber, bill)).toFixed(2)
-    if(isNaN(bill)) {
-        alert("you did not enter a number.")
-    }else {
-        alert(" your lucky number is: " + luckyNumber);
-        alert("your price before discount: $" + bill.toFixed(2));
-        alert("your price after discount: $" + billAfterDiscount);
-    }
+// var luckyNumber = Math.floor(Math.random() * 6);
+// var bill = parseFloat(prompt("what is your bill?"));
+// var billAfterDiscount = (calculateTotal(luckyNumber, bill)).toFixed(2)
+//     if(isNaN(bill)) {
+//         alert("you did not enter a number.")
+//     }else {
+//         alert(" your lucky number is: " + luckyNumber);
+//         alert("your price before discount: $" + bill.toFixed(2));
+//         alert("your price after discount: $" + billAfterDiscount);
+//     }
 
 /**
  * TODO:
@@ -181,32 +181,34 @@ var billAfterDiscount = (calculateTotal(luckyNumber, bill)).toFixed(2)
 //     } else {
 //         alert("that is not a number");
 //     }
+//     alert("your number plus 100 is $" + (num + 100));
 
-    // var askForNum = confirm("would you like to enter a number");
-    // function inputNumber() {
-    //     var num = parseInt(prompt("what is your number"));
-    //     while (isNaN(num)) {
-    //         if(num === nul) {
-    //             break;
-    //         }
-    //         alert("please enter a number")
-    //         num = parseInt(prompt("what is your number"));
-    //     }
-    //     if (num % 2 === 0 && num < 0) {
-    //         return (num + "  is negative even");
-    //     } else if (num % 2 !== 0 && num < 0){
-    //         return(num + "  is negative odd");
-    //     } else if(num % 2 === 0 && num > 0) {
-    //         return(num + " is positive even");
-    //     } else if (num % 2 !== 0 && num > 0) {
-    //         return(num + " is positive odd");
-    //     } else {
-    //         return("that is not a number");
-    //     }
-    // }
-    // if (askForNum) {
-    //     alert(inputNumber());
-    // } else {
-    //     alert("Goodbye");
-    // }
+    var askForNum = confirm("would you like to enter a number");
+    function inputNumber() {
+        var num = parseInt(prompt("what is your number"));
+        while (isNaN(num)) {
+            if(num === null) {
+                break;
+            }
+            alert("please enter a number")
+            num = parseInt(prompt("what is your number"));
+        }
+        if (num % 2 === 0 && num < 0) {
+            return (num + "  is negative even and your number plus one hundred is " + (num + 100));
+        } else if (num % 2 !== 0 && num < 0){
+            return(num + "  is negative odd and your number plus one hundred is " + (num + 100));
+        } else if(num % 2 === 0 && num > 0) {
+            return(num + " is positive even and your number plus one hundred is " + (num + 100));
+        } else if (num % 2 !== 0 && num > 0) {
+            return(num + " is positive odd and your number plus one hundred is " + (num + 100));
+        } else {
+            return("that is not a number");
+        }
+    }
+
+    if (askForNum) {
+        alert(inputNumber());
+    } else {
+        alert("Goodbye");
+    }
 })()
