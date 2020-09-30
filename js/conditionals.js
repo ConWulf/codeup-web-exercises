@@ -187,9 +187,6 @@ function calculateTotal(luckyNum, total = 0) {
     function inputNumber() {
         var num = parseInt(prompt("what is your number"));
         while (isNaN(num)) {
-            if(num === null) {
-                break;
-            }
             alert("please enter a number")
             num = parseInt(prompt("what is your number"));
         }
@@ -199,13 +196,11 @@ function calculateTotal(luckyNum, total = 0) {
             return(num + "  is negative odd and your number plus one hundred is " + (num + 100));
         } else if(num % 2 === 0 && num > 0) {
             return(num + " is positive even and your number plus one hundred is " + (num + 100));
-        } else if (num % 2 !== 0 && num > 0) {
+        } else  {
             return(num + " is positive odd and your number plus one hundred is " + (num + 100));
-        } else {
-            return("that is not a number");
         }
-    }
 
+    }
     if (askForNum) {
         alert(inputNumber());
     } else {
