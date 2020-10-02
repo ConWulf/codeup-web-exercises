@@ -50,6 +50,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+//console.log("color is: " + randomColor
 // console.log(analyzeColor(randomColor));
 
     /**
@@ -125,6 +126,8 @@ function calculateTotal(luckyNum, total = 0) {
     return discountPrice;
 }
     console.log(calculateTotal(2, 100));
+    console.log(calculateTotal(4, 100));
+    console.log(calculateTotal(1, 100));
 
     /**
  * TODO:
@@ -134,16 +137,16 @@ function calculateTotal(luckyNum, total = 0) {
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var bill = parseFloat(prompt("what is your bill?"));
-// var billAfterDiscount = (calculateTotal(luckyNumber, bill)).toFixed(2)
-//     if(isNaN(bill)) {
-//         alert("you did not enter a number.")
-//     }else {
-//         alert(" your lucky number is: " + luckyNumber);
-//         alert("your price before discount: $" + bill.toFixed(2));
-//         alert("your price after discount: $" + billAfterDiscount);
-//     }
+var luckyNumber = Math.floor(Math.random() * 6);
+var bill = parseFloat(prompt("what is your bill?"));
+var billAfterDiscount = (calculateTotal(luckyNumber, bill)).toFixed(2)
+    if(isNaN(bill)) {
+        alert("you did not enter a number.")
+    }else {
+        alert(" your lucky number is: " + luckyNumber);
+        alert("your price before discount: $" + bill.toFixed(2));
+        alert("your price after discount: $" + billAfterDiscount);
+    }
 
 /**
  * TODO:
@@ -181,29 +184,29 @@ function calculateTotal(luckyNum, total = 0) {
 //     } else {
 //         alert("that is not a number");
 //     }
-//     alert("your number plus 100 is $" + (num + 100));
 
     var askForNum = confirm("would you like to enter a number");
     function inputNumber() {
-        var num = parseInt(prompt("what is your number"));
-        while (isNaN(num)) {
-            alert("please enter a number")
-            num = parseInt(prompt("what is your number"));
-        }
-        if (num % 2 === 0 && num < 0) {
-            return (num + "  is negative even and your number plus one hundred is " + (num + 100));
+        var num = parseFloat(prompt("what is your number"));
+           if (isNaN(num)) {
+               num = "you did not enter a number";
+           } else if (num % 2 === 0 && num < 0) {
+            num = (num + "  is negative even and your number plus one hundred is " + (num + 100));
         } else if (num % 2 !== 0 && num < 0){
-            return(num + "  is negative odd and your number plus one hundred is " + (num + 100));
+            num = (num + "  is negative odd and your number plus one hundred is " + (num + 100));
         } else if(num % 2 === 0 && num > 0) {
-            return(num + " is positive even and your number plus one hundred is " + (num + 100));
+            num = (num + " is positive even and your number plus one hundred is " + (num + 100));
         } else  {
-            return(num + " is positive odd and your number plus one hundred is " + (num + 100));
+            num = (num + " is positive odd and your number plus one hundred is " + (num + 100));
         }
-
+           return num;
     }
     if (askForNum) {
         alert(inputNumber());
     } else {
         alert("Goodbye");
     }
-})()
+
+    var x = 2
+
+})();
