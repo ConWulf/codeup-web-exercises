@@ -12,12 +12,12 @@ showMultiplicationTable(5);
 
 
 function oddOrEven() {
-    var randomNumber = Math.floor(Math.random() * 200);
-    for (var i = 0; i < 10; i++) {
-    }
 
+    for (var i = 20; i < 200; i++) {
+    }
 }
-oddOrEven();
+
+    oddOrEven();
 
 
 })();
