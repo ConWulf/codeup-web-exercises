@@ -6,12 +6,21 @@
 //     for (var i = 1; i < 11; i++) {
 //         console.log(num + " * " + i + " = " + num * i);
 //     }
-//
 // }
 // showMultiplicationTable(5);
 
+// function showMultiplicationTable(num) {
+//     var multiply = "";
+//     for (let i = 1; i <= 10 ; i++) {
+//         multiply += (i + "") + " * " + (num + "") + " = " + (num * i) + "   ";
+//     }
+//     return multiply;
+// }
+
+//         console.log(showMultiplicationTable(i));
+
     // function randNum(min, max) {
-    //     return Math.floor(Math.random() * (max - min) + min )
+    //     return Math.floor(Math.random() * (max - min) + min );
     // }
     //     for (var i = 0; i < 10; i++) {
     //         if (randNum(20, 200) % 2 === 0) {
