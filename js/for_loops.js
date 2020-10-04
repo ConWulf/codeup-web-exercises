@@ -16,10 +16,8 @@
 //     }
 //     return multiply;
 // }
-//
-//     for (let i = 1; i <= 5; i++) {
+
 //         console.log(showMultiplicationTable(i));
-//     }
 
     // function randNum(min, max) {
     //     return Math.floor(Math.random() * (max - min) + min );
