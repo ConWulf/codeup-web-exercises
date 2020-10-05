@@ -62,20 +62,20 @@
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
-    var num = [1, 2, 3, 4, 5];
-
-    function first(arr) {
-        return arr[0];
-    }
-    function second(arr) {
-        return arr[1];
-    }
-    function last(arr) {
-        return arr[arr.length -1];
-    }
-
-    console.log(first(num));
-    console.log(second(num));
-    console.log(last(num));
+    // var num = [1, 2, 3, 4, 5];
+    //
+    // function first(arr) {
+    //     return arr[0];
+    // }
+    // function second(arr) {
+    //     return arr[1];
+    // }
+    // function last(arr) {
+    //     return arr[arr.length -1];
+    // }
+    //
+    // console.log(first(num));
+    // console.log(second(num));
+    // console.log(last(num));
 
 })();
