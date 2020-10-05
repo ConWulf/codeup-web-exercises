@@ -20,16 +20,19 @@ var start = 0;
     return start;
 }
 
-    // var m = 0;
-    // for (let j = 0; j < Math.pow(10, 8); j++) {
-    //     if (j === narcissisticNum(j)) {
-    //         m += 1
-    //         console.log("The narcissistic number at " + m + " is: " + j);
-    //         if (m === 25) {
-    //             break;
-    //         }
-    //     }
-    // }
+function numberOutput() {
+    var m = 0;
+    for (let j = 0; j < Math.pow(10, 9); j++) {
+        if (j === narcissisticNum(j)) {
+            m += 1
+            console.log("The narcissistic number at " + m + " is: " + j);
+            if (m === 33) {
+                break;
+            }
+        }
+    }
+}
+numberOutput();
 
 
     console.log(narcissisticNum(370));
@@ -38,16 +41,16 @@ console.log(narcissisticNum(407));
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
-function reverseString(string) {
-    var strArr = [];
-    for (let i = string.length; i >= 0; i--) {
-        strArr.push(string[i])
-    }
-    return strArr.join("");
-}
-
-    console.log("works for anything");
-    console.log(reverseString("works for anything"));
+// function reverseString(string) {
+//     var strArr = [];
+//     for (let i = string.length; i >= 0; i--) {
+//         strArr.push(string[i])
+//     }
+//     return strArr.join("");
+// }
+//
+//     console.log("works for anything");
+//     console.log(reverseString("works for anything"));
 
    //TODO: Create a function that will:
    //  -Accept any number as input.
@@ -102,19 +105,19 @@ function reverseString(string) {
     // iterative adding of a number amd it's own palindrome (i.e. 23 + 32 = 55)
     // (46 + 64 = 110; 110 + 011 = 121)
 
-    function palindrome(num) {
-        var sNum = num.toString();
-        var reverseNum = (reverseString(sNum) * 1);
-        while (reverseNum !== num) {
-            num += reverseNum;
-            sNum = num.toString();
-            reverseNum = (reverseString(sNum) * 1);
-        }
-        return num;
-
-    }
-
-    console.log(palindrome(89));
+    // function palindrome(num) {
+    //     var sNum = num.toString();
+    //     var reverseNum = (reverseString(sNum) * 1);
+    //     while (reverseNum !== num) {
+    //         num += reverseNum;
+    //         sNum = num.toString();
+    //         reverseNum = (reverseString(sNum) * 1);
+    //     }
+    //     return num;
+    //
+    // }
+    //
+    // console.log(palindrome(89));
 
     // function palindrome(num) {
     //     var sNum;
