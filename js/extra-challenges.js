@@ -26,7 +26,7 @@ function numberOutput() {
         if (j === narcissisticNum(j)) {
             m += 1
             console.log("The narcissistic number at " + m + " is: " + j);
-            if (m === 33) {
+            if (m === 34) {
                 break;
             }
         }
