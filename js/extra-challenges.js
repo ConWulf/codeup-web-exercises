@@ -22,11 +22,11 @@ var start = 0;
 
 function numberOutput() {
     var m = 0;
-    for (let j = 0; j < Math.pow(10, 9); j++) {
+    for (let j = 0; j < Math.pow(10, 10); j++) {
         if (j === narcissisticNum(j)) {
             m += 1
             console.log("The narcissistic number at " + m + " is: " + j);
-            if (m === 33) {
+            if (m === 34) {
                 break;
             }
         }
@@ -41,14 +41,14 @@ console.log(narcissisticNum(407));
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
-// function reverseString(string) {
-//     var strArr = [];
-//     for (let i = string.length; i >= 0; i--) {
-//         strArr.push(string[i])
-//     }
-//     return strArr.join("");
-// }
-//
+function reverseString(string) {
+    var strArr = [];
+    for (let i = string.length; i >= 0; i--) {
+        strArr.push(string[i])
+    }
+    return strArr.join("");
+}
+
 //     console.log("works for anything");
 //     console.log(reverseString("works for anything"));
 
@@ -152,18 +152,21 @@ console.log(narcissisticNum(407));
     //
     // palindrome(10911);
 
-    // function palindrome(num) {
-    //         var sNum = num.toString();
-    //         var reverseNum = (reverseString(sNum) * 1);
-    //         var numTable = "";
-    //         while(reverseNum !== num) {
-    //             numTable += (sNum) + ( " + " + reverseNum + " = ") + (num + reverseNum) + "   ";
-    //             num += reverseNum;
-    //             sNum = num.toString();
-    //             reverseNum = (reverseString(sNum) * 1);
-    //     }
-    //     return numTable
-    // }
+    function palindrome(num) {
+            var sNum = num.toString();
+            var reverseNum = (reverseString(sNum) * 1);
+            var numTable = "";
+            while(reverseNum !== num) {
+                numTable += (sNum) + ( " + " + reverseNum + " = ") + (num + reverseNum) + "   ";
+                num += reverseNum;
+                sNum = num.toString();
+                reverseNum = (reverseString(sNum) * 1);
+        }
+        return numTable
+    }
 
-    // console.log(palindrome(46));
+    console.log(palindrome(96));
+    console.log(palindrome(46));
+    console.log(palindrome(46));
+    console.log(palindrome(68));
 })();

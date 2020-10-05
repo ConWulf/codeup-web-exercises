@@ -2,12 +2,12 @@
 
 "use strict"
 
-// function showMultiplicationTable(num) {
-//     for (var i = 1; i < 11; i++) {
-//         console.log(num + " * " + i + " = " + num * i);
-//     }
-// }
-// showMultiplicationTable(5);
+function showMultiplicationTable(num) {
+    for (var i = 1; i < 11; i++) {
+        console.log(num + " * " + i + " = " + (num * i));
+    }
+}
+showMultiplicationTable(5);
 
 // function showMultiplicationTable(num) {
 //     var multiply = "";
