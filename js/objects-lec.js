@@ -196,7 +196,7 @@ var chooseFighter = [{
         lastName:"Squarepants"
     },
     catchphrase: function () {
-        return "I'm Ready"
+        return "I'm Ready";
     },
     abilities: ["Karate", "Bubble blowing"]
 },{
@@ -205,7 +205,7 @@ var chooseFighter = [{
         lastName: "Star",
     },
     catchphrase: function () {
-        return "No, this is Patrick"
+        return "No, this is Patrick";
     },
     abilities: ["belly flop", "belly bounce"]
 },{
@@ -214,7 +214,7 @@ var chooseFighter = [{
           lastName: "Krabs"
     },
     catchphrase: function () {
-        return "Money"
+        return "Money";
     },
     abilities: ["money", "money", "tiny violin"]
 },{
@@ -223,7 +223,7 @@ var chooseFighter = [{
         lastName: "Tentacles"
     },
     catchphrase: function () {
-        return "sad noise"
+        return "sad noise";
     },
     abilities: ["squilliam", "clarinet"]
 }
