@@ -27,6 +27,7 @@
      */
 
     console.log("Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune");
+
    console.log("<ul> " +
        "<li>Mercury</li>" +
        "<li>Venus</li>" +

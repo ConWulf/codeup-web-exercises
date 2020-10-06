@@ -24,9 +24,10 @@ console.log(pies);
 // -shift
 // -push
 // -reverse
+// -splice
 
 // does not return a mutated array
-// -splice
+
 // -slice
 // -indexOd
 // -lastIndexOf
