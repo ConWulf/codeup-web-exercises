@@ -170,7 +170,7 @@
             // });
 
     books.forEach((book, index) => {
-        showBookInfo(book, index);
+        console.log(showBookInfo(book, index));
     });
 
     /**
@@ -184,34 +184,36 @@
      *   `showBookInfo` function.
      */
 
-    // function createBook(title, authFirstName, authLastName) {
-    //     var book = {};
-    //     book.title = title;
-    //     book.author = {}
-    //     book.author.firstName = authFirstName;
-    //     book.author.lastName = authLastName;
-    //     return book;
-    // }
+    function createBook(title, authFirstName, authLastName) {
+        var book = new Object();
+        book.title = title;
+        book.author = new Object();
+        book.author.firstName = authFirstName;
+        book.author.lastName = authLastName;
+        return book;
+    }
 
     // console.log(books);
 
-    function createBook(title, authFirstName, authLastName) {
-        return {
-            title: title,
-            author: {
-                firstName: authFirstName,
-                lastName: authLastName
-            }
-        };
-    }
+    // function createBook(title, authFirstName, authLastName) {
+    //     return {
+    //         title: title,
+    //         author: {
+    //             firstName: authFirstName,
+    //             lastName: authLastName
+    //         }
+    //     };
+    // }
 
     // console.log(createBook(books));
 
     function showBookInfo(bookInfo, index) {
-            console.log("***=====***");
-            console.log("Book #" + index);
-            console.log("Title: " + bookInfo.title);
-            console.log("Author: " + bookInfo.author.firstName + " " + bookInfo.author.lastName);
+        var output = ""
+            output += "***=====***" + "\n";
+            output += "Book #" + index + "\n";
+            output += "Title: " + bookInfo.title + "\n";
+            output += "Author: " + bookInfo.author.firstName + " " + bookInfo.author.lastName;
+            return output;
     }
 
 
