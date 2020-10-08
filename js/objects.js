@@ -49,31 +49,34 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-    //
-    // function discount(shopperList) {
-    //     var offer = .12;
-    //     var before;
-    //     var name;
-    //     var after;
-    //     shopperList.forEach(shopper => {
-    //         console.log("===============================================");
-    //         before = "amount before: " + shopper.amount + ",";
-    //         name = "name: " + shopper.name + ",";
-    //         if (shopper.amount > 200) {
-    //             after = "amount after: " + (shopper.amount - (shopper.amount * offer))
-    //             console.log(name + " " + before + " " + after);
-    //         } else {
-    //             after = "amount after: " + (shopper.amount)
-    //             console.log(name + " " + before + " " + after);
-    //         }
-    //     })
-    // }
-    // discount(shoppers);
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    function discount(shopperList) {
+        var offer = .12;
+        var before;
+        var name;
+        var after;
+        var discount;
+        shopperList.forEach(shopper => {
+            console.log("===============================================");
+            before = "amount before: " + shopper.amount + ",";
+            name = "name: " + shopper.name + ",";
+            if (shopper.amount > 200) {
+                discount = "discount amount: " + (shopper.amount * offer) + ",";
+                after = "amount after: " + (shopper.amount - (shopper.amount * offer))
+                console.log(name + " "  + discount + " " + before + " " + after);
+            } else {
+                discount = "discount amount: " + 0 + ",";
+                after = "amount after: " + (shopper.amount);
+                console.log(name + " " + discount + " " + before + " " + after);
+            }
+        })
+    }
+    discount(shoppers);
 
 
     /** TODO:
