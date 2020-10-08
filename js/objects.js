@@ -91,43 +91,49 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {
-            title: "Hitchhikers Guide to the Galaxy",
-            author: {
-                firstName: "Douglas",
-                lastName: "Adams"
-            }
-        },
-        {
-            title: "the Witcher",
-            author: {
-                firstName: "Andrzej",
-                lastName: "Sapkowski"
-            }
-        },
-        {
-            title: "Marvel Champions",
-            author: {
-                firstName: "Mark",
-                lastName: "Ramos"
-            }
-        },
-        {
-            title: "Frankenstein",
-            author: {
-                firstName: "Mary",
-                lastName: "Shelly"
-            }
-        },
-        {
-            title: "Calvin and Hobbs",
-            author: {
-                firstName: "Bill",
-                lastName: "Watterson"
-            }
-        }
-    ]
+    // var books = [
+    //     {
+    //         title: "Hitchhikers Guide to the Galaxy",
+    //         author: {
+    //             firstName: "Douglas",
+    //             lastName: "Adams"
+    //         }
+    //     },
+    //     {
+    //         title: "the Witcher",
+    //         author: {
+    //             firstName: "Andrzej",
+    //             lastName: "Sapkowski"
+    //         }
+    //     },
+    //     {
+    //         title: "Marvel Champions",
+    //         author: {
+    //             firstName: "Mark",
+    //             lastName: "Ramos"
+    //         }
+    //     },
+    //     {
+    //         title: "Frankenstein",
+    //         author: {
+    //             firstName: "Mary",
+    //             lastName: "Shelly"
+    //         }
+    //     },
+    //     {
+    //         title: "Calvin and Hobbs",
+    //         author: {
+    //             firstName: "Bill",
+    //             lastName: "Watterson"
+    //         }
+    //     }
+    // ]
+
+    var books = [createBook("Calvin and Hobbes", "Bill", "Watterson"),
+        createBook("Frankenstein", "Mary", "Shelly"),
+            createBook("Marvels Champions", "Mark", ),
+            createBook("Hitchhikers Guide to the Galaxy", "Douglas", "Adams"),
+        createBook("the Witcher", "Andrzej", "Sapkowski")]
 
     /**
      * TODO:
@@ -154,16 +160,16 @@
      *      ...
      */
 
-    function bookInfo(book) {
-        books.forEach((book, index) => {
-            console.log("***=======***");
-            console.log("Book # " + index);
-            console.log("Title: " + book.title);
-            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-        })
-    }
-
-    bookInfo(books);
+    // function bookInfo(book) {
+    //     books.forEach((book, index) => {
+    //         console.log("***=======***");
+    //         console.log("Book #" + index);
+    //         console.log("Title: " + book.title);
+    //         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     })
+    // }
+    //
+    // bookInfo(books);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -175,6 +181,26 @@
      *   `showBookInfo` function.
      */
 
+    function createBook(title, authFirstName, authLastName) {
+        var book = {};
+        book.title = title;
+        book.author = {};
+        book.author.firstName = authFirstName;
+        book.author.lastName = authLastName;
+        return book;
+    }
 
+
+    function showBookInfo(bookInfo) {
+        bookInfo.forEach((book, index) => {
+            console.log("***=====***");
+            console.log("Book #" + index);
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+
+        });
+    }
+
+    showBookInfo(books);
 
 })();

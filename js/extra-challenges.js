@@ -3,51 +3,51 @@
 
     //TODO: Write a script to generate and output the first 25 narcissistic integers.
 
-function narcissisticNum(num) {
-var digits = num + "";
-var nDigits = [];
-var ogNum = [];
-var start = 0;
-    for (let i = 0; i < digits.length; i++) {
-       nDigits.push(digits[i]);
-    }
-    for (let i = 0; i < nDigits.length; i++) {
-       ogNum. push(Math.pow(nDigits[i], digits.length));
-    }
-    for (let i = 0; i < ogNum.length; i++) {
-        start += ogNum[i];
-    }
-    return start;
-}
+// function narcissisticNum(num) {
+// var digits = num + "";
+// var nDigits = [];
+// var ogNum = [];
+// var start = 0;
+//     for (let i = 0; i < digits.length; i++) {
+//        nDigits.push(digits[i]);
+//     }
+//     for (let i = 0; i < nDigits.length; i++) {
+//        ogNum. push(Math.pow(nDigits[i], digits.length));
+//     }
+//     for (let i = 0; i < ogNum.length; i++) {
+//         start += ogNum[i];
+//     }
+//     return start;
+// }
+//
+// function numberOutput() {
+//     var m = 0;
+//     for (let j = 0; j < 4679307776; j++) {
+//         if (j === narcissisticNum(j)) {
+//             m += 1
+//             console.log("The narcissistic number at " + m + " is: " + j);
+//             if (m === 34) {
+//                 break;
+//             }
+//         }
+//     }
+// }
+// numberOutput();
 
-function numberOutput() {
-    var m = 0;
-    for (let j = 0; j < 4679307776; j++) {
-        if (j === narcissisticNum(j)) {
-            m += 1
-            console.log("The narcissistic number at " + m + " is: " + j);
-            if (m === 34) {
-                break;
-            }
-        }
-    }
-}
-numberOutput();
 
-
-    console.log(narcissisticNum(370));
-console.log(narcissisticNum(371));
-console.log(narcissisticNum(407));
+//     console.log(narcissisticNum(370));
+// console.log(narcissisticNum(371));
+// console.log(narcissisticNum(407));
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
-// function reverseString(string) {
-//     var strArr = [];
-//     for (let i = string.length; i >= 0; i--) {
-//         strArr.push(string[i])
-//     }
-//     return strArr.join("");
-// }
+function reverseString(string) {
+    var strArr = [];
+    for (let i = string.length; i >= 0; i--) {
+        strArr.push(string[i])
+    }
+    return strArr.join("");
+}
 
 //     console.log("works for anything");
 //     console.log(reverseString("works for anything"));
@@ -105,19 +105,22 @@ console.log(narcissisticNum(407));
     // iterative adding of a number amd it's own palindrome (i.e. 23 + 32 = 55)
     // (46 + 64 = 110; 110 + 011 = 121)
 
-    // function palindrome(num) {
-    //     var sNum = num.toString();
-    //     var reverseNum = (reverseString(sNum) * 1);
-    //     while (reverseNum !== num) {
-    //         num += reverseNum;
-    //         sNum = num.toString();
-    //         reverseNum = (reverseString(sNum) * 1);
-    //     }
-    //     return num;
-    //
-    // }
-    //
-    // console.log(palindrome(89));
+    function palindrome(num) {
+        parseInt(num);
+        var sNum = num.toString();
+        var reverseNum = (reverseString(sNum) * 1);
+        while (reverseNum !== num) {
+            num += reverseNum;
+            sNum = num.toString();
+            reverseNum = (reverseString(sNum) * 1);
+        }
+        return num;
+    }
+
+    // console.log(palindrome(96));
+    // console.log(palindrome(46));
+    console.log(palindrome(46));
+    // console.log(palindrome(68));
 
     // function palindrome(num) {
     //     var sNum;
@@ -135,7 +138,6 @@ console.log(narcissisticNum(407));
 
     // console.log(palindrome(46));
 
-    //TODO: print ot eah iteration of the reverse-add sequence.
 
     // function palindrome(num) {
     //     var sNum = num.toString();
@@ -169,4 +171,6 @@ console.log(narcissisticNum(407));
     // console.log(palindrome(46));
     // console.log(palindrome(46));
     // console.log(palindrome(68));
+
+
 })();
