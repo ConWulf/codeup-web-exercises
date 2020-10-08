@@ -3,30 +3,67 @@
 
     //TODO: Write a script to generate and output the first 25 narcissistic integers.
 
-function narcissisticNum(num) {
+<<<<<<< HEAD
+    // function narcissisticNum(num) {
+    // var digits = num + "";
+    // var nDigits = [];
+    // var ogNum = [];
+    // var start = 0;
+    //     for (let i = 0; i < digits.length; i++) {
+    //        nDigits.push(digits[i]);
+    //     }
+    //     for (let i = 0; i < nDigits.length; i++) {
+    //        ogNum. push(Math.pow(nDigits[i], digits.length));
+    //     }
+    //     for (let i = 0; i < ogNum.length; i++) {
+    //         start += ogNum[i];
+    //     }
+    //     return start;
+    // }
+    //
+    // function numberOutput() {
+    //     var m = 0;
+    //     for (let j = 0; j < 4679307776; j++) {
+    //         if (j === narcissisticNum(j)) {
+    //             m += 1
+    //             console.log("The narcissistic number at " + m + " is: " + j);
+    //             if (m === 34) {
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }
+    // numberOutput();
+
+
+    //     console.log(narcissisticNum(370));
+    // console.log(narcissisticNum(371));
+    // console.log(narcissisticNum(407));
+    =======
+    function narcissisticNum(num) {
 var digits = num + "";
 var nDigits = [];
 var ogNum = [];
 var start = 0;
-    for (let i = 0; i < digits.length; i++) {
-       nDigits.push(digits[i]);
-    }
-    for (let i = 0; i < nDigits.length; i++) {
-       ogNum. push(Math.pow(nDigits[i], digits.length));
-    }
-    for (let i = 0; i < ogNum.length; i++) {
-        start += ogNum[i];
-    }
-    return start;
+for (let i = 0; i < digits.length; i++) {
+nDigits.push(digits[i]);
+}
+for (let i = 0; i < nDigits.length; i++) {
+ogNum. push(Math.pow(nDigits[i], digits.length));
+}
+for (let i = 0; i < ogNum.length; i++) {
+start += ogNum[i];
+}
+return start;
 }
 
 //4679307776
 function numberOutput() {
-    var m = 0;
-    for (let j = 0; j < 1000; j++) {
-        if (j === narcissisticNum(j)) {
-            m += 1
-            console.log("The narcissistic number at " + m + " is: " + j);
+var m = 0;
+for (let j = 0; j < 1000; j++) {
+if (j === narcissisticNum(j)) {
+m += 1
+console.log("The narcissistic number at " + m + " is: " + j);
             if (m === 34) {
                 break;
             }
@@ -39,6 +76,7 @@ numberOutput();
     console.log(narcissisticNum(370));
 console.log(narcissisticNum(371));
 console.log(narcissisticNum(407));
+>>>>>>> 321b9f39e53c89ae961f47a0321db1619c6bffe8
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
@@ -171,6 +209,21 @@ console.log(narcissisticNum(407));
     // console.log(palindrome(46));
     // console.log(palindrome(68));
 
+<<<<<<< HEAD
+=======
+    // BONUS CHALLENGE (when finished with the exercise)...
+
+    // TODO: Create a phone number parser that will convert a string of numbers into a human readable format.
+    //  The output should depend on the number of digits (account for 7, 10, 11 digit numbers):
+    //  Using multiple functions will be helpful.
+
+    // input = 5552324343, output = 555-232-4343
+    // input = 5553434, output = 555-3434
+    // input = 18005552323, output = 1-800-555-2323
+    // Extra Challenge: account for invalid characters
+    // Extra Challenge: if the input is already formatted, output the unformatted version
+    // Extra Challenge: allow the parser to accept letters and convert them to the correct numbers
+
     // BONUS CHALLENGE (when finished with the exercise)...
 
     // TODO: Create a phone number parser that will convert a string of numbers into a human readable format.
@@ -220,4 +273,6 @@ console.log(narcissisticNum(407));
     console.log(phone(number));
 
 
+
+>>>>>>> 321b9f39e53c89ae961f47a0321db1619c6bffe8
 })();

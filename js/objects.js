@@ -55,7 +55,6 @@
     //     {name: 'George', amount: 320}
     // ];
     //
-    //
     // function discount(shopperList) {
     //     var offer = .12;
     //     var before;
@@ -74,7 +73,6 @@
     //         }
     //     })
     // }
-    //
     // discount(shoppers);
 
 
@@ -91,43 +89,50 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {
-            title: "Hitchhikers Guide to the Galaxy",
-            author: {
-                firstName: "Douglas",
-                lastName: "Adams"
-            }
-        },
-        {
-            title: "the Witcher",
-            author: {
-                firstName: "Andrzej",
-                lastName: "Sapkowski"
-            }
-        },
-        {
-            title: "Marvel Champions",
-            author: {
-                firstName: "Mark",
-                lastName: "Ramos"
-            }
-        },
-        {
-            title: "Frankenstein",
-            author: {
-                firstName: "Mary",
-                lastName: "Shelly"
-            }
-        },
-        {
-            title: "Calvin and Hobbs",
-            author: {
-                firstName: "Bill",
-                lastName: "Watterson"
-            }
-        }
-    ]
+    // var books = [
+    //     {
+    //         title: "Hitchhikers Guide to the Galaxy",
+    //         author: {
+    //             firstName: "Douglas",
+    //             lastName: "Adams"
+    //         }
+    //     },
+    //     {
+    //         title: "the Witcher",
+    //         author: {
+    //             firstName: "Andrzej",
+    //             lastName: "Sapkowski"
+    //         }
+    //     },
+    //     {
+    //         title: "Marvel Champions",
+    //         author: {
+    //             firstName: "Mark",
+    //             lastName: "Ramos"
+    //         }
+    //     },
+    //     {
+    //         title: "Frankenstein",
+    //         author: {
+    //             firstName: "Mary",
+    //             lastName: "Shelly"
+    //         }
+    //     },
+    //     {
+    //         title: "Calvin and Hobbs",
+    //         author: {
+    //             firstName: "Bill",
+    //             lastName: "Watterson"
+    //         }
+    //     }
+    // ]
+    // console.log(books);
+
+    var books = [createBook("Calvin and Hobbes", "Bill", "Watterson"),
+        createBook("Frankenstein", "Mary", "Shelly"),
+            createBook("Marvels Champions", "Mark", ),
+            createBook("Hitchhikers Guide to the Galaxy", "Douglas", "Adams"),
+        createBook("the Witcher", "Andrzej", "Sapkowski")]
 
     /**
      * TODO:
@@ -154,16 +159,17 @@
      *      ...
      */
 
-    function bookInfo(book) {
-        books.forEach((book, index) => {
-            console.log("***=======***");
-            console.log("Book # " + index);
-            console.log("Title: " + book.title);
-            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-        })
-    }
+            // books.forEach((book, index) => {
+            //     console.log("***=======***");
+            //     console.log("Book #" + index);
+            //     console.log("Title: " + book.title);
+            //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+            // });
 
-    bookInfo(books);
+    books.forEach((book, index) => {
+        showBookInfo(book, index);
+    });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -174,6 +180,36 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    // function createBook(title, authFirstName, authLastName) {
+    //     var book = {};
+    //     book.title = title;
+    //     book.author = {}
+    //     book.author.firstName = authFirstName;
+    //     book.author.lastName = authLastName;
+    //     return book;
+    // }
+
+    // console.log(books);
+
+    function createBook(title, authFirstName, authLastName) {
+        return {
+            title: title,
+            author: {
+                firstName: authFirstName,
+                lastName: authLastName
+            }
+        };
+    }
+
+    // console.log(createBook(books));
+
+    function showBookInfo(bookInfo, index) {
+            console.log("***=====***");
+            console.log("Book #" + index);
+            console.log("Title: " + bookInfo.title);
+            console.log("Author: " + bookInfo.author.firstName + " " + bookInfo.author.lastName);
+    }
 
 
 
