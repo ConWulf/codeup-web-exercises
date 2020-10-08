@@ -193,6 +193,8 @@
         return book;
     }
 
+    books.push(createBook("bookN", "AuthorFirstName", "AuthorLastName"));
+
     // console.log(books);
 
     // function createBook(title, authFirstName, authLastName) {
