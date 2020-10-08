@@ -55,7 +55,6 @@
     //     {name: 'George', amount: 320}
     // ];
     //
-    //
     // function discount(shopperList) {
     //     var offer = .12;
     //     var before;
@@ -74,7 +73,6 @@
     //         }
     //     })
     // }
-    //
     // discount(shoppers);
 
 
@@ -128,6 +126,7 @@
     //         }
     //     }
     // ]
+    // console.log(books);
 
     var books = [createBook("Calvin and Hobbes", "Bill", "Watterson"),
         createBook("Frankenstein", "Mary", "Shelly"),
@@ -160,12 +159,16 @@
      *      ...
      */
 
-            books.forEach((book, index) => {
-                console.log("***=======***");
-                console.log("Book #" + index);
-                console.log("Title: " + book.title);
-                console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-            });
+            // books.forEach((book, index) => {
+            //     console.log("***=======***");
+            //     console.log("Book #" + index);
+            //     console.log("Title: " + book.title);
+            //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+            // });
+
+    books.forEach((book, index) => {
+        showBookInfo(book, index);
+    });
 
     /**
      * Bonus:
@@ -178,26 +181,37 @@
      *   `showBookInfo` function.
      */
 
+    // function createBook(title, authFirstName, authLastName) {
+    //     var book = {};
+    //     book.title = title;
+    //     book.author = {}
+    //     book.author.firstName = authFirstName;
+    //     book.author.lastName = authLastName;
+    //     return book;
+    // }
+
+    // console.log(books);
+
     function createBook(title, authFirstName, authLastName) {
-        var book = {};
-        book.title = title;
-        book.author = {};
-        book.author.firstName = authFirstName;
-        book.author.lastName = authLastName;
-        return book;
+        return {
+            title: title,
+            author: {
+                firstName: authFirstName,
+                lastName: authLastName
+            }
+        };
     }
 
+    // console.log(createBook(books));
 
-    function showBookInfo(bookInfo) {
-        bookInfo.forEach((book, index) => {
+    function showBookInfo(bookInfo, index) {
             console.log("***=====***");
             console.log("Book #" + index);
-            console.log("Title: " + book.title);
-            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+            console.log("Title: " + bookInfo.title);
+            console.log("Author: " + bookInfo.author.firstName + " " + bookInfo.author.lastName);
 
-        });
     }
 
-    showBookInfo(books);
+
 
 })();
