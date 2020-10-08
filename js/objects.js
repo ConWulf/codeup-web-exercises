@@ -209,7 +209,6 @@
             console.log("Book #" + index);
             console.log("Title: " + bookInfo.title);
             console.log("Author: " + bookInfo.author.firstName + " " + bookInfo.author.lastName);
-
     }
 
 
