@@ -160,16 +160,13 @@
      *      ...
      */
 
-    // function bookInfo(book) {
-    //     books.forEach((book, index) => {
-    //         console.log("***=======***");
-    //         console.log("Book #" + index);
-    //         console.log("Title: " + book.title);
-    //         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-    //     })
-    // }
-    //
-    // bookInfo(books);
+            books.forEach((book, index) => {
+                console.log("***=======***");
+                console.log("Book #" + index);
+                console.log("Title: " + book.title);
+                console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+            });
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
