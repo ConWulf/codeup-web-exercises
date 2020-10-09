@@ -13,7 +13,7 @@
         logInfo: function (doRounding) {
             // TODO: complete this method.
             if (doRounding === true) {
-            var int = Math.round(circle.getArea());
+            var int = Math.round(this.getArea());
             console.log("Area of a circle with radius: " + this.radius + ", is: " + int);
             } else {
             console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea());

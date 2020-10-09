@@ -73,4 +73,23 @@ let randomDecimal = (Math.random() * .3) + .5;
     //Math.E
 
     //Math.PI
+
+
+
+
+    //pre-exercise warmup
+
+    // function randomRange(min, max) {
+    //     return Math.floor(Math.random() * (max - min + 1)) + min
+    // }
+
+     function randomRange(num1, num2) {
+         if (num1 > num2) {
+        return Math.floor(Math.random() * (num1 - num2 + 1)) + num2
+         }
+         return Math.floor(Math.random() * (num2 - num1 + 1)) + num1
+    }
+
+    console.log(randomRange(10, 5));
+
 })();
