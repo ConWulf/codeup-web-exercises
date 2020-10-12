@@ -3,7 +3,7 @@
 
     //TODO: Write a script to generate and output the first 25 narcissistic integers.
 
-<<<<<<< HEAD
+
     // function narcissisticNum(num) {
     // var digits = num + "";
     // var nDigits = [];
@@ -39,7 +39,7 @@
     //     console.log(narcissisticNum(370));
     // console.log(narcissisticNum(371));
     // console.log(narcissisticNum(407));
-    =======
+
     function narcissisticNum(num) {
 var digits = num + "";
 var nDigits = [];
@@ -80,13 +80,13 @@ console.log(narcissisticNum(407));
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
-// function reverseString(string) {
-//     var strArr = [];
-//     for (let i = string.length; i >= 0; i--) {
-//         strArr.push(string[i])
-//     }
-//     return strArr.join("");
-// }
+function reverseString(string) {
+    var strArr = [];
+    for (let i = string.length; i >= 0; i--) {
+        strArr.push(string[i])
+    }
+    return strArr.join("");
+}
 
 //     console.log("works for anything");
 //     console.log(reverseString("works for anything"));
@@ -158,19 +158,19 @@ console.log(narcissisticNum(407));
     //
     // console.log(palindrome(89));
 
-    // function palindrome(num) {
-    //     var sNum;
-    //     var reverseNum;
-    //     do {
-    //         sNum = num.toString();
-    //         reverseNum = (reverseString(sNum) * 1);
-    //         num += reverseNum;
-    //         sNum = num.toString();
-    //         reverseNum = (reverseString(sNum) * 1);
-    //     } while (reverseNum !== num)
-    //     return num;
-    //
-    // }
+    function palindrome(num) {
+        var sNum;
+        var reverseNum;
+        do {
+            sNum = num.toString();
+            reverseNum = (reverseString(sNum) * 1);
+            num += reverseNum;
+            sNum = num.toString();
+            reverseNum = (reverseString(sNum) * 1);
+        } while (reverseNum !== num)
+        return num;
+
+    }
 
     // console.log(palindrome(46));
 
