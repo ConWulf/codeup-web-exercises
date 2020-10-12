@@ -209,8 +209,6 @@ console.log(narcissisticNum(407));
     // console.log(palindrome(46));
     // console.log(palindrome(68));
 
-<<<<<<< HEAD
-=======
     // BONUS CHALLENGE (when finished with the exercise)...
 
     // TODO: Create a phone number parser that will convert a string of numbers into a human readable format.
