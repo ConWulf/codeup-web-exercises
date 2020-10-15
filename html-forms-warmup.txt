@@ -1,0 +1,57 @@
+================================= WARM UP
+ use the written curriculum and other
+online resources to answer the following questions:
+# HTML Forms Pre Lesson
+1. What HTTP methods can we use in forms?
+POST, GET
+
+2. What happens if we do not specify a method?
+it defaults to GET
+
+3. What is a `GET` method?
+The GET method requests data from a server
+***should never be used with sensitive data
+
+4. What is a `POST` method?
+POST is used to change data on a server
+
+5. What is the `action` attribute used for?
+it points to the location the data is sent to
+
+6. What is a `query string`?
+a query string assigns values to specific parameters in key=value pairs
+
+7. How are query strings structured?
+?key1-value&key2=value&key3=value&...keyN=valueN
+
+8. How do we submit a form?
+a button or input with the type submit
+
+9. What are some common form input elements?
+text inputs, text areas, checkboxes, radio buttons, selects, and hidden inputs
+
+10. How can we use name and value attributes?
+the name becomes the key,  and the value can be used to pre-fill an input
+
+11. How do you disable an input?
+use the disabled attribute
+
+12. How do you hide an input?
+make the input type hidden
+
+13. What are `labels` used for?
+labels label an input
+
+Bonus
+* Describe the following:
+  *   Text Inputs
+  -allows the user to write text
+  -could be used for usernames or passwords
+  *   Text Areas
+  -a larger field to write text in
+  -possibly used in twitter and facebook
+  *   Checkbox and Radio Buttons
+  -a checkbox allows the user to check one or more items
+  -a radio button allows the user to only check one item
+  *   Selects
+ -a drop down list of choices
