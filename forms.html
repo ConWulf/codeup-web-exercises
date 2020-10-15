@@ -1,9 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>forms</title>
+	<meta charset="UTF-8">
+	<title>Register with us</title>
 </head>
-
-
-
+<body>
+<h1>Register With Us</h1>
+<form method="POST" action="https://hookb.in/2qpJB7plN1T9BBKGpVYr">
+	<section>
+			<label for="email"></label>
+			<input type="email" id="email" name="email" placeholder="enter an email">
+			<br>
+			<label for="password"></label>
+			<input type="password" id="password" name="password" placeholder="enter a password">
+	</section>
+	<br>
+	<section>
+		<label for="bio"></label>
+		<textarea id="bio" name="bio" style="resize: none" rows="5"></textarea>
+	</section>
+	<br>
+	<section>
+		<fieldset>
+			<label for="billboard"><input type="checkbox" id="billboard" name="heardAbout" value="billboard">Billboard</label>
+			<br>
+			<label for="radioAdvertisement"><input type="checkbox" id="radioAdvertisement" name="heardAbout" value="radioAdvertisement">Radio Advertisement</label>
+			<br>
+			<label for="internet"><input type="checkbox" id="internet" name="heardAbout" value="internet">Internet Advertisement</label>
+			<br>
+			<label for="other"><input type="checkbox" id="other" name="heardAbout" value="other">other</label>
+<!--			<label for="billboard"><input type="radio" id="billboard" name="heardAbout" value="billboard">Billboard</label>-->
+<!--			<br>-->
+<!--			<label for="radioAdvertisement"><input type="radio" id="radioAdvertisement" name="heardAbout" value="radioAdvertisement">Radio Advertisement</label>-->
+<!--			<br>-->
+<!--			<label for="internet"><input type="radio" id="internet" name="heardAbout" value="internet">Internet Advertisement</label>-->
+<!--			<br>-->
+<!--			<label for="other"><input type="radio" id="other" name="heardAbout" value="other">other</label>-->
+		</fieldset>
+	</section>
+	<br>
+	<section>
+		<label for="browser"></label>
+		<select id="browser" name="browser">
+			<option value="chrome">Google Chrome</option>
+			<option value="firefox">Firefox</option>
+			<option value="safari">Safari</option>
+			<option value="opera">Opera</option>
+			<option value="edge">Microsoft Edge</option>
+			<option value="explorer">Internet Explorer</option>
+		</select>
+	</section>
+	<hr>
+	<button type="submit">Submit</button>
+</form>
+</body>
 </html>
