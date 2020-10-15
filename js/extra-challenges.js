@@ -76,7 +76,6 @@ numberOutput();
     console.log(narcissisticNum(370));
 console.log(narcissisticNum(371));
 console.log(narcissisticNum(407));
->>>>>>> 321b9f39e53c89ae961f47a0321db1619c6bffe8
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
@@ -272,5 +271,19 @@ function reverseString(string) {
 
 
 
->>>>>>> 321b9f39e53c89ae961f47a0321db1619c6bffe8
+    // function isPrime(num) {
+    //     var newNum = (num - 1);
+    //     for (var i = newNum; i > 1; i--) {
+    //         newNum *= (i - 1)
+    //     }
+    //     var divisible = (newNum + 1) / num;
+    //     if (divisible === Math.round(divisible)) {
+    //         return num + " has to be prime"
+    //     }
+    //     return num + " is not prime " + newNum
+    // }
+    //
+    // console.log(isPrime(25));
+
+
 })();
