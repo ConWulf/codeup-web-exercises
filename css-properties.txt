@@ -1,0 +1,81 @@
+===== CSS PROPERTY EXPLORATION ACTIVITY
+A list of questions for each breakout room is listed below.
+Decide as a group how to best divide up your breakout room questions between group members.
+Individuals/groups of team members will then research answers to a question and prepare coding
+examples (where applicable) to best illustrate the topic/answer.
+Some questions are harder than others so if you finish early, assist other group members with answering additional/harder questions.
+Collaborate with your group and share with each other what you found in researching your questions.
+Designate one or two presenters in the group to present the findings of the group to the class.
+If your group finishes early, feel free to help out other groups.
+We will begin group presentations at 3:00PM.
+Aim to present for around 5 minutes or less and expect questions.
+===== GROUP 1 - Specificity (CAPTAIN AMERICA)
+Specificity https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+Using the curriculum and above article as a reference, create examples to demo the specificity of the following in the correct order:
+  classes
+  elements
+  ids
+  !important
+  order of CSS declarations
+  inline styling
+  selector combinations
+What does the “Cascading” mean in “Cascading Style Sheets”?
+===== GROUP 2 - Color Properties (IRON MAN)
+Prepare code examples to present answers to the following questions:
+  How does hexadecimal color coding work?
+  Why use CSS color names over hex values and vice versa?
+  Why use rgb to define a CSS color vs. a hex value?
+  What is the difference between 3 digit hex values and 6?
+  ‘background’ and ‘background-color’ properties can produce the same output; why is this possible?
+  What is the ‘a’ in rgba?
+  What is the ‘Digital Color Meter’ on a Mac? How is the helpful?
+  BONUS (if time)
+    What are CSS gradients?
+===== GROUP 3 - Text and Font Properties 1 (BLACK WIDOW)
+Prepare code examples to present answers to the following questions:
+
+  What is a font stack and how should the best one be chosen?
+
+  What is the difference between serif and sans serif font?
+
+
+  How can a developer use a Google font? -me
+  go to google fonts, find the font you want, add the styles you want, and use the embed tab to get the url and
+  link it in the head of the html using a link element with rel of stylesheet and an href that is the link
+  of the google font.
+
+
+  How can a developer figure out what font is being used on a given web page?
+  1.    Open inspect on the webpage
+  2.    Click on the element you want to inspect
+  3.    Then slick on the Computed tab and scroll down to family-font
+  	Find out what font an image has
+  1.    Right click on the image and save image as.
+  2.    Go to website Myfonts.com And upload the image as well as crop to the specific font
+  To uncover renamed fonts-the font family is not clearly name so it does not show up on inspection tools, so the method to find these is as follows:
+  1.    Open inspector tool
+  2.    Click on the application tab
+  3.    On the right scroll down to Frames
+  4.    Open up the fonts
+  5.    And right click to open a new tab(this downloads it)
+  6.    Go to website wakamaifondue.com where you can drag the downloaded font.
+
+===== GROUP 4 - Text and Font Properties 2 (HAWKEYE)
+Prepare code examples to present answers to the following questions:
+  What is a websafe font?
+  What is the difference between using pixels, ems, and rems?
+  How can the space between letters in CSS be controlled?
+  How can the case of letters be changed purely with CSS?
+===== GROUP 5 - Other Properties 1 (THOR)
+Prepare code examples to present answers to the following questions:
+  How does the unset CSS property work?
+  How does the inherit property work?
+  How can CSS transform rotate or change the size of a displayed element?
+  How do CSS transitions work (focus on a simple example)?
+===== GROUP 6 - Other Properties 1 (SCARLET WITCH)
+Prepare code examples to present answers to the following questions:
+  How do CSS animations work (focus on a simple example)?
+  What is the difference between display: none and display: hidden?
+  When using and image and css folder in a project, why is the path to a background image in a stylesheet different than the path to the same image in an image tag?
+  BONUS (if time)
+    How can a background image be faded so that elements in the foreground are clearly visible?

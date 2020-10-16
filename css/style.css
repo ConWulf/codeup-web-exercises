@@ -1,0 +1,53 @@
+
+.Veridian-welcome-header {
+    color: #bb2233;
+    text-decoration: underline;
+    text-align: center;
+}
+
+h3[class*="header"] {
+    color: #bb2233;
+    text-decoration: underline;
+}
+
+body {
+    background-color: rgba(156, 223, 253, 0.5);
+    margin: 0;
+    font-family: "Press Start 2P", sans-serif;
+    background-image: url("../img/mount-st-helens-lake.JPG");
+   background-position: center;
+    background-size: cover;
+}
+
+.core-values, .vision {
+    list-style: square;
+}
+
+.price-table {
+    color: #fff;
+    font-size: 2em;
+    padding: 5px;
+}
+
+.price-table td{
+    padding: 5px;
+}
+
+.guarantee {
+    padding: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    font-size: 2em;
+}
+
+a:visited {
+    visibility: hidden;
+}
+
