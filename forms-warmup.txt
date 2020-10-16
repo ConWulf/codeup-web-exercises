@@ -1,0 +1,16 @@
+Conduct a peer review and answer the following questions about HTML forms:
+
+- What control is used to make a single choice from a list of mutually exclusive choices?
+Radio button
+
+- What is used to select one, more than one, or no choices from a list of choices?
+checkbox
+
+- What do you call a field for the input of a single line of text?
+ text
+
+- A field for the input of a single line of text, in which characters entered appear as bullets or asterisks?
+ password
+
+- This element represents a document section that contains interactive controls for submitting information to a web server.
+form element
