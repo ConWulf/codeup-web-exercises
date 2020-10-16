@@ -3,7 +3,7 @@
 
     //TODO: Write a script to generate and output the first 25 narcissistic integers.
 
-<<<<<<< HEAD
+
     // function narcissisticNum(num) {
     // var digits = num + "";
     // var nDigits = [];
@@ -39,7 +39,7 @@
     //     console.log(narcissisticNum(370));
     // console.log(narcissisticNum(371));
     // console.log(narcissisticNum(407));
-    =======
+
     function narcissisticNum(num) {
 var digits = num + "";
 var nDigits = [];
@@ -76,17 +76,16 @@ numberOutput();
     console.log(narcissisticNum(370));
 console.log(narcissisticNum(371));
 console.log(narcissisticNum(407));
->>>>>>> 321b9f39e53c89ae961f47a0321db1619c6bffe8
 
     //TODO: Write a function that takes in a string variable and returns that string reversed.
 
-// function reverseString(string) {
-//     var strArr = [];
-//     for (let i = string.length; i >= 0; i--) {
-//         strArr.push(string[i])
-//     }
-//     return strArr.join("");
-// }
+function reverseString(string) {
+    var strArr = [];
+    for (let i = string.length; i >= 0; i--) {
+        strArr.push(string[i])
+    }
+    return strArr.join("");
+}
 
 //     console.log("works for anything");
 //     console.log(reverseString("works for anything"));
@@ -158,19 +157,19 @@ console.log(narcissisticNum(407));
     //
     // console.log(palindrome(89));
 
-    // function palindrome(num) {
-    //     var sNum;
-    //     var reverseNum;
-    //     do {
-    //         sNum = num.toString();
-    //         reverseNum = (reverseString(sNum) * 1);
-    //         num += reverseNum;
-    //         sNum = num.toString();
-    //         reverseNum = (reverseString(sNum) * 1);
-    //     } while (reverseNum !== num)
-    //     return num;
-    //
-    // }
+    function palindrome(num) {
+        var sNum;
+        var reverseNum;
+        do {
+            sNum = num.toString();
+            reverseNum = (reverseString(sNum) * 1);
+            num += reverseNum;
+            sNum = num.toString();
+            reverseNum = (reverseString(sNum) * 1);
+        } while (reverseNum !== num)
+        return num;
+
+    }
 
     // console.log(palindrome(46));
 
@@ -209,8 +208,6 @@ console.log(narcissisticNum(407));
     // console.log(palindrome(46));
     // console.log(palindrome(68));
 
-<<<<<<< HEAD
-=======
     // BONUS CHALLENGE (when finished with the exercise)...
 
     // TODO: Create a phone number parser that will convert a string of numbers into a human readable format.
@@ -274,5 +271,19 @@ console.log(narcissisticNum(407));
 
 
 
->>>>>>> 321b9f39e53c89ae961f47a0321db1619c6bffe8
+    // function isPrime(num) {
+    //     var newNum = (num - 1);
+    //     for (var i = newNum; i > 1; i--) {
+    //         newNum *= (i - 1)
+    //     }
+    //     var divisible = (newNum + 1) / num;
+    //     if (divisible === Math.round(divisible)) {
+    //         return num + " has to be prime"
+    //     }
+    //     return num + " is not prime " + newNum
+    // }
+    //
+    // console.log(isPrime(25));
+
+
 })();
