@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Veridian Dynamics</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
 <!--	<style>-->
 <!--		.fancy-header {-->
 <!--			color: blue;-->
@@ -12,28 +13,28 @@
 <!--	</style>-->
 </head>
 <body>
-	<header id="top">
-		<h1 class="fancy-header">Welcome to Veridian Dynamics</h1>
+	<header class="mai-head" id="top">
+		<h1 class="Veridian-welcome-header">Welcome to Veridian Dynamics</h1>
 		<!-- strong and emphasis tags are better than bold or i tags -->
 		<div>at Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <b><i>technology</i></b></div>
 	</header>
 	<hr>
 	<main>
 		<section>
-			<h3>Core Values</h3>
-			<ul>
+			<h3 class="list-header">Core Values</h3>
+			<ul class="core-values">
 				<li>Competence</li>
 				<li>Involvement</li>
 				<li>Technology</li>
 			</ul>
-			<h3>Our Process</h3>
-			<ol>
+			<h3 class="list-header">Our Process</h3>
+			<ol class="process">
 				<li>Plan</li>
 				<li>Evaluate</li>
 				<li>Implement</li>
 			</ol>
-			<h3>2020 Vision</h3>
-			<ul>
+			<h3 class="list-header">2020 Vision</h3>
+			<ul class="vision">
 				<li>Become #1 in Technology</li>
 				<li>Increase Success by 20%</li>
 				<li>increase Business by 30%</li>
@@ -41,7 +42,7 @@
 		</section>
 		<hr>
 		<section>
-			<h3>Company Vision</h3>
+			<h3 class="image-header">Company Vision</h3>
 			<!-- use divs to kep images grouped -->
 			<div>
 				<!-- good practice to only change width or height, not book -->
@@ -49,11 +50,11 @@
 			<img src="img/pexels-soumil-kumar-735911.jpg" width="400"  alt="Person typing">
 			</div>
 			<img src="img/pacific_sunset.JPG" width="400" alt="ocean sunset">
-			<img src="img/pexels-thisisengineering-3861964.jpg" height="267" width="400" alt="person coding">
+			<img src="img/pexels-dzenina-lukac-930530.jpg" width="400" alt="computer">
 		</section>
 		<section>
-			<h3>Our Product</h3>
-			<table>
+			<h3 class="table-header">Our Product</h3>
+			<table class="price-table">
 				<tr>
 					<th>Plan</th>
 					<th>Price</th>
@@ -79,9 +80,8 @@
 	</main>
 		<footer>
 			<!-- easier to style using symbol entity -->
-			<i>All products come with our quality guarantee <sup style="font-size: x-small">TM</sup>.</i>
+			<p class="guarantee"><i>All products come with our quality guarantee™.</i></p>
 		</footer>
-		<br>
-		<a href="#top">Go to top of page</a>
+	<a href="#top">Go to top of page</a>
 </body>
 </html>
