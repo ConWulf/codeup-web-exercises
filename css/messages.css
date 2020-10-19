@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
     --main-bg-info: #BBDEFB;
     --main-text-info: #5656FF;
     --main-bg-success: #BBFFA9;
@@ -10,7 +13,6 @@
     --main-text-warning: #AA3;
     --main-bg-error: #EAB3D7;
     --main-text-error:  #EE4500
-
 }
 
 body, html {
