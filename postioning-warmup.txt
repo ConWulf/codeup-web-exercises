@@ -1,0 +1,13 @@
+What is the difference between an inline and a block element?
+and inline element only takes up the area of the tags it is in, a block element takes up the entire width available of the
+tags it's in
+
+what does the css float property do?
+it forces content to the left or right of its container,
+allows elements to stack next to each other.
+
+what is the default positioning for elements?
+static
+
+what does the clear css property do?
+it clears a floated element on the left, right, or both sides.
