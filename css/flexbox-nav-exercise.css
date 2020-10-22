@@ -38,7 +38,6 @@ ul {
     /*display: flex;*/
     /*height: 100%;*/
     /*width: 100%;*/
-    /*background-color: orangered;*/
 }
 
 li:not(.logo) {
@@ -53,9 +52,14 @@ li:not(.logo) a:hover {
 
 /*.logo a {*/
 /*    margin: auto;*/
-/*    color: #bb2233;*/
 /*}*/
 
 /*li:nth-child(6) {*/
 /*    margin-left: auto;*/
+/*}*/
+
+/*div {*/
+/*    height: 100%;*/
+/*    width:50%;*/
+/*    background-color: #0fb784;*/
 /*}*/
