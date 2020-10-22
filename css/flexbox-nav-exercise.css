@@ -15,20 +15,18 @@ a {
 
 .navbar {
     height: 4.25em;
-    background-color: #a9a9a9;
+    /*position: relative;*/
 }
 
 ul {
     height: 100%;
+    width: 100%;
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
     align-items: center;
-}
-
-li {
-   position: relative;
+    background-color: #a9a9a9;
 }
 
 .logo {
@@ -36,13 +34,28 @@ li {
     margin: auto;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+    /*position: absolute;*/
+    /*display: flex;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*background-color: orangered;*/
 }
 
 li:not(.logo) {
     margin: 1em;
     font-family: "Work Sans", sans-serif;
+    /*z-index: 1;*/
 }
 
 li:not(.logo) a:hover {
     color: #1969B2;
 }
+
+/*.logo a {*/
+/*    margin: auto;*/
+/*    color: #bb2233;*/
+/*}*/
+
+/*li:nth-child(6) {*/
+/*    margin-left: auto;*/
+/*}*/
