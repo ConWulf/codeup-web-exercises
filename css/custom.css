@@ -1,0 +1,20 @@
+.background-pizza {
+    background-image: url('../img/pizza.png');
+}
+
+.background-text {
+    opacity: .6;
+    display: flex;
+    justify-content: center;
+}
+
+.pizza-size {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#inputGroupSelect01 {
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+}
+
