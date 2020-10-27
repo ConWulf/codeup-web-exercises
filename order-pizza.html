@@ -44,9 +44,9 @@
 
 	<div class="container">
 
-		<div class="jumbotron jumbotron-fluid background-pizza">
+		<div class="jumbotron jumbotron-fluid background-pizza mt-lg-4 d-none d-lg-block">
 
-			<div class="container bg-light background-text">
+			<div class="container bg-light background-text d-flex justify-content-center">
 				<h1 class="display-4">Welcome to Pizza World!</h1>
 			</div>
 
@@ -58,9 +58,9 @@
 		<nav>
 
 			<div class="nav nav-tabs" id="nav-tab" role="tablist">
-				<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><span class="badge badge-pill bg-secondary text-light">1</span>Size an Crust</a>
-				<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><span class="badge badge-pill bg-secondary text-light">2</span>Cheese and Sauce</a>
-				<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><span class="badge badge-pill bg-secondary text-light">2</span>Toppings</a>
+				<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"><span class="badge badge-pill bg-secondary text-light">1</span> Size an Crust</a>
+				<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"><span class="badge badge-pill bg-secondary text-light">2</span> Cheese and Sauce</a>
+				<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"><span class="badge badge-pill bg-secondary text-light">2</span> Toppings</a>
 			</div>
 
 		</nav>
@@ -70,7 +70,7 @@
 			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 				<div class="card">
 
-					<div class="card-header">
+					<div class="card-header bg-primary">
 						Choose Size and crust
 					</div>
 
@@ -133,7 +133,7 @@
 						</div>
 
 					</div>
-					<div class="card-footer pizza-size">
+					<div class="card-footer d-flex justify-content-end">
 						<a href="#" class="btn btn-primary goto-next">Next Step <i class="fas fa-chevron-right"></i></a></div>
 				</div>
 			</div>
@@ -141,8 +141,8 @@
 
 
 			<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-				<div class="card text-center">
-					<div class="card-header">
+				<div class="card">
+					<div class="card-header bg-primary">
 						Choose cheese and sauce
 					</div>
 					<div class="card-body">
@@ -159,10 +159,10 @@
 											<label for="inputGroupSelect01"></label>
 
 										<select class="custom-select" id="inputGroupSelect01">
-											<option selected>Choose...</option>
-											<option value="1">One</option>
-											<option value="2">Two</option>
-											<option value="3">Three</option>
+											<option selected>Light</option>
+											<option value="1">Normal</option>
+											<option value="2">Extra</option>
+											<option value="3">Double</option>
 										</select>
 
 									</div>
@@ -172,7 +172,7 @@
 							</ul>
 						</div>
 
-						<div class="card">
+						<div class="card mt-3">
 							<div class="card-header">
 								Sauce
 							</div>
@@ -187,7 +187,23 @@
 											<option selected>Tomato sauce</option>
 											<option value="1">Marinara sauce</option>
 											<option value="2">BBQ Sauce</option>
-											<option value="3">Alfredo</option>
+											<option value="3">Alfredo Sauce</option>
+										</select>
+
+									</div>
+
+								</li>
+
+								<li class="list-group-item">
+									How Much?
+									<div class="input-group mb-3">
+
+										<label for="inputGroupSelect03"></label>
+
+										<select class="custom-select" id="inputGroupSelect03">
+											<option selected>Light</option>
+											<option value="1">Normal</option>
+											<option value="2">Extra</option>
 										</select>
 
 									</div>
@@ -198,18 +214,112 @@
 						</div>
 
 					</div>
-					<div class="card-footer text-muted">
-						<a href="#" class="btn btn-primary"> <i class="fas fa-chevron-left"></i> Previous Step</a>
-						<a href="#" class="btn btn-primary">Next Step <i class="fas fa-chevron-right"></i></a>
+					<div class="card-footer text-muted d-flex justify-content-end">
+						<a href="#" class="btn btn-primary previous"> <i class="fas fa-chevron-left"></i> Previous Step</a>
+						<a href="#" class="btn btn-primary next-step">Next Step <i class="fas fa-chevron-right"></i></a>
 					</div>
 				</div>
 			</div>
-			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+				<div class="card">
+
+					<div class="card-header bg-primary">
+						Choose Toppings
+					</div>
+
+					<div class="card-body">
+
+						<div class="card">
+							<div class="card-header">
+								Choose Meats
+							</div>
+
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+										<label class="form-check-label" for="defaultCheck5">
+											Green Peppers
+										</label>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+										<label class="form-check-label" for="defaultCheck6">
+											Mushrooms
+										</label>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+										<label class="form-check-label" for="defaultCheck7">
+											Onions
+										</label>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+										<label class="form-check-label" for="defaultCheck8">
+											Jalepeño's
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="card mt-3">
+							<div class="card-header">
+								Choose Meats
+							</div>
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+										<label class="form-check-label" for="defaultCheck1">
+											Beef
+										</label>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+										<label class="form-check-label" for="defaultCheck2">
+											Ham
+										</label>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+										<label class="form-check-label" for="defaultCheck3">
+											Philly Steak
+										</label>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+										<label class="form-check-label" for="defaultCheck4">
+											Bacon
+										</label>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="card-footer text-muted d-flex justify-content-end">
+						<a href="#" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i></a>
+					</div>
+				</div>
+			</div>
 
 		</div>
 	</div>
-
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
