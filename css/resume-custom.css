@@ -1,49 +1,90 @@
+
+   .list-group-item, div, #social {
+        background-color: #DF9A57;
+    }
+
 hr {
     border: 2px solid green;
     margin-bottom: 3rem;
 }
 
+h3:not(.cs) {
+    color: #007EA7;
+}
+
 h6 {
-    font-size: 8pt;
+    font-size: 9pt;
 }
 
 h5 {
     font-size: 13pt;
 }
 
+body {
+    margin-left: 1em;
+    color: #0A1045;
+
+}
+
+ #resume-info .column, #resume-info li {
+    padding-left: 0;
+}
+
 #full-resume {
     border-left: 1px solid black;
-    margin-left: 1em;
 }
 
 .list-group-item {
     border: none;
-    padding-right: 0;
-    padding-left: 1rem;
+
 }
 
-#social > div {
-    padding-right: 0;
-    padding-left: 0;
+#ln-icon {
+    color:black;
 }
 
-#skills {
-    padding: 0;
-}
-
-#projects {
-    padding: 0;
-}
-
-#skills > h3 {
-    padding-left: 1rem;
-}
-
-.list {
-    padding-left: 60px;
+#git-icon {
+    color: black;
 }
 
 @media screen and (min-width: 768px) {
+    div#full-resume {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
 
+    hr {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    #resume-info .column, #resume-info li {
+        padding-left: 15px;
+    }
+
+    .projects {
+        padding-top: 0;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    a {
+        color: black;
+    }
+
+    .linkedin:hover {
+        font-size: 12pt;
+        color: #1969B2;
+        text-decoration: none;
+    }
+
+    .git:hover {
+        font-size: 12pt;
+        color: #1969B2;
+        text-decoration: none;
+    }
 
 }
