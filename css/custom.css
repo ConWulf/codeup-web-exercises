@@ -1,0 +1,32 @@
+.background-pizza {
+    background-image: url('../img/pizza.png');
+}
+
+.background-text {
+    opacity: .6;
+}
+
+#inputGroupSelect01 {
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+}
+
+#inputGroupSelect02 {
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+}
+
+#inputGroupSelect03 {
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+}
+
+.previous {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.next-step {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
