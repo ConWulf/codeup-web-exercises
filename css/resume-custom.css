@@ -1,0 +1,49 @@
+hr {
+    border: 2px solid green;
+    margin-bottom: 3rem;
+}
+
+h6 {
+    font-size: 8pt;
+}
+
+h5 {
+    font-size: 13pt;
+}
+
+#full-resume {
+    border-left: 1px solid black;
+    margin-left: 1em;
+}
+
+.list-group-item {
+    border: none;
+    padding-right: 0;
+    padding-left: 1rem;
+}
+
+#social > div {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#skills {
+    padding: 0;
+}
+
+#projects {
+    padding: 0;
+}
+
+#skills > h3 {
+    padding-left: 1rem;
+}
+
+.list {
+    padding-left: 60px;
+}
+
+@media screen and (min-width: 768px) {
+
+
+}
