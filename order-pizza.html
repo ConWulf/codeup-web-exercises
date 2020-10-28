@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/custom.css">
-	<title>Document</title>
+	<title>Pizza Site</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,8 +28,8 @@
 				</li>
 			</ul>
 
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
+			<form class="form-inline my-2 my-lg-0" method="get" action="https://hookb.in/aBDPnY3EWoF1oobLKemO">
+				<input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search" name="zip-code">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Stores Near You</button>
 			</form>
 		</div>
@@ -41,6 +41,8 @@
 		</nav>
 
 	</nav>
+
+	<form method="post" action="https://hookb.in/aBDPnY3EWoF1oobLKemO">
 
 	<div class="container">
 
@@ -84,7 +86,7 @@
 
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+										<input class="form-check-input" type="radio" name="size" id="exampleRadios1" value="tossed-small" checked>
 										<label class="form-check-label" for="exampleRadios1">
 											Small (10")
 										</label>
@@ -93,7 +95,7 @@
 
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+										<input class="form-check-input" type="radio" name="size" id="exampleRadios2" value="tossed-medium">
 										<label class="form-check-label" for="exampleRadios2">
 											Medium (12")
 										</label>
@@ -113,7 +115,7 @@
 
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" checked>
+										<input class="form-check-input" type="radio" name="size" id="exampleRadios3" value="crispy-medium">
 										<label class="form-check-label" for="exampleRadios3">
 											Medium (12")
 										</label>
@@ -122,7 +124,7 @@
 
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios4" value="option4" checked>
+										<input class="form-check-input" type="radio" name="size" id="exampleRadios4" value="crispy-large">
 										<label class="form-check-label" for="exampleRadios4">
 											Large (14")
 										</label>
@@ -134,7 +136,8 @@
 
 					</div>
 					<div class="card-footer d-flex justify-content-end">
-						<a href="#" class="btn btn-primary goto-next">Next Step <i class="fas fa-chevron-right"></i></a></div>
+						<a href="#nav-profile" class="btn btn-primary goto-next" role="button">Next Step <i class="fas fa-chevron-right"></i></a>
+					</div>
 				</div>
 			</div>
 
@@ -158,11 +161,11 @@
 
 											<label for="inputGroupSelect01"></label>
 
-										<select class="custom-select" id="inputGroupSelect01">
-											<option selected>Light</option>
-											<option value="1">Normal</option>
-											<option value="2">Extra</option>
-											<option value="3">Double</option>
+										<select class="custom-select" id="inputGroupSelect01" name="cheese">
+											<option value="light" selected>Light</option>
+											<option value="normal">Normal</option>
+											<option value="extra">Extra</option>
+											<option value="double">Double</option>
 										</select>
 
 									</div>
@@ -183,11 +186,11 @@
 
 										<label for="inputGroupSelect02"></label>
 
-										<select class="custom-select" id="inputGroupSelect02">
-											<option selected>Tomato sauce</option>
-											<option value="1">Marinara sauce</option>
-											<option value="2">BBQ Sauce</option>
-											<option value="3">Alfredo Sauce</option>
+										<select class="custom-select" id="inputGroupSelect02" name="sauce">
+											<option value="tomato" selected>Tomato sauce</option>
+											<option value="marinara">Marinara sauce</option>
+											<option value="bbq">BBQ Sauce</option>
+											<option value="alfredo">Alfredo Sauce</option>
 										</select>
 
 									</div>
@@ -200,10 +203,10 @@
 
 										<label for="inputGroupSelect03"></label>
 
-										<select class="custom-select" id="inputGroupSelect03">
-											<option selected>Light</option>
-											<option value="1">Normal</option>
-											<option value="2">Extra</option>
+										<select class="custom-select" id="inputGroupSelect03" name="amount">
+											<option value="light" selected>Light</option>
+											<option value="normal">Normal</option>
+											<option value="extra">Extra</option>
 										</select>
 
 									</div>
@@ -231,13 +234,13 @@
 
 						<div class="card">
 							<div class="card-header">
-								Choose Meats
+								Choose non-Meats
 							</div>
 
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+										<input class="form-check-input" type="checkbox" name="toppings" value="green-peppers" id="defaultCheck5">
 										<label class="form-check-label" for="defaultCheck5">
 											Green Peppers
 										</label>
@@ -245,7 +248,7 @@
 								</li>
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
+										<input class="form-check-input" type="checkbox" name="toppings" value="mushrooms" id="defaultCheck6">
 										<label class="form-check-label" for="defaultCheck6">
 											Mushrooms
 										</label>
@@ -253,7 +256,7 @@
 								</li>
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck7">
+										<input class="form-check-input" type="checkbox" name="toppings" value="onions" id="defaultCheck7">
 										<label class="form-check-label" for="defaultCheck7">
 											Onions
 										</label>
@@ -261,9 +264,9 @@
 								</li>
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck8">
+										<input class="form-check-input" type="checkbox" name="toppings" value="jalepeno" id="defaultCheck8">
 										<label class="form-check-label" for="defaultCheck8">
-											Jalepeño's
+											Jalapeños
 										</label>
 									</div>
 								</li>
@@ -277,7 +280,7 @@
 							<ul class="list-group list-group-flush">
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+										<input class="form-check-input" type="checkbox" name="toppings" value="beef" id="defaultCheck1">
 										<label class="form-check-label" for="defaultCheck1">
 											Beef
 										</label>
@@ -285,7 +288,7 @@
 								</li>
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+										<input class="form-check-input" type="checkbox" name="toppings" value="ham" id="defaultCheck2">
 										<label class="form-check-label" for="defaultCheck2">
 											Ham
 										</label>
@@ -293,7 +296,7 @@
 								</li>
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+										<input class="form-check-input" type="checkbox" name="toppings" value="philly-steak" id="defaultCheck3">
 										<label class="form-check-label" for="defaultCheck3">
 											Philly Steak
 										</label>
@@ -301,7 +304,7 @@
 								</li>
 								<li class="list-group-item">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+										<input class="form-check-input" type="checkbox" name="toppings" value="bacon" id="defaultCheck4">
 										<label class="form-check-label" for="defaultCheck4">
 											Bacon
 										</label>
@@ -313,17 +316,19 @@
 					</div>
 
 					<div class="card-footer text-muted d-flex justify-content-end">
-						<a href="#" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i></a>
+						<button type="submit" class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i></button>
 					</div>
 				</div>
 			</div>
 
 		</div>
 	</div>
+	</form>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/6e57a86385.js" crossorigin="anonymous"></script>
+	<script src="js/order-pizza.js"></script>
 </body>
 </html>
