@@ -73,6 +73,7 @@ body {
 
     a {
         color: black;
+        transition: font-size 500ms;
     }
 
     .linkedin:hover {
