@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="utf-8">
+    <title>Defuse the BOM</title>
+
+</head>
+<style>
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#bomb {
+		font-size: 20rem;
+	}
+
+	@keyframes pulse {
+		from {color: black}
+		to {color: red}
+	}
+
+	@keyframes expand {
+		from {opacity: 0}
+		to {opacity: 1}
+		from {font-size: 25rem}
+		to {font-size: 70rem}
+	}
+
+
+</style>
+<body>
+
+<div class="wrapper">
+	<h1 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h1>
+	<button id="defuser">Defuse the BOM</button>
+	<i class="fas fa-bomb" id="bomb"></i>
+</div>
+<script>
+(function() {
+    "use strict";
+
+    var detonationTimer = 5;
+
+    // TODO: This function needs to be called once every second
+    function updateTimer() {
+        if (detonationTimer === -1) {
+            // alert('EXTERMINATE!');
+            document.getElementById("message").innerHTML = '';
+            document.getElementById("defuser").remove();
+            clearInterval(pulseTimer)
+			document.getElementById("bomb").style.animation = "expand 1s 1"
+			document.getElementById("message").innerHTML = 'You Blew Up';
+        } else if (detonationTimer >= 0) {
+            document.getElementById('timer').innerHTML = detonationTimer;
+        }
+
+        detonationTimer--;
+    }
+
+	let timer = setInterval(updateTimer, 1000);
+	let pulseTimer = setInterval(bombPulse, 100)
+	let fontSize = 20
+	function bombPulse() {
+		if (fontSize === 25) {
+			fontSize -= .5
+		} else {
+			fontSize += .5
+		}
+		document.getElementById("bomb").style.fontSize = fontSize + "rem";
+		console.log(document.getElementById("bomb").style.fontSize);
+		document.getElementById("bomb").style.animation = "pulse 1s 7 alternate" ;
+	}
+
+	bombPulse();
+
+    // TODO: When this function runs, it needs to
+    // cancel the interval/timeout for updateTimer()
+    function defuseTheBOM() {
+		clearInterval(timer);
+		clearInterval(pulseTimer)
+    }
+
+    // Don't modify anything below this line!
+    //
+    // This causes the defuseTheBOM() function to be called
+    // when the "defuser" button is clicked.
+    // We will learn about events in the DOM lessons
+    var defuser = document.getElementById('defuser');
+    defuser.addEventListener('click', defuseTheBOM);
+})();
+</script>
+<script src="https://kit.fontawesome.com/6e57a86385.js" crossorigin="anonymous"></script>
+</body>
+</html>
