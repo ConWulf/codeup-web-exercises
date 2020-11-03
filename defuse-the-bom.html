@@ -50,11 +50,11 @@
     function updateTimer() {
         if (detonationTimer === -1) {
             // alert('EXTERMINATE!');
-            document.getElementById("message").innerHTML = '';
+            // document.body.innerHTML = "";
             document.getElementById("defuser").remove();
-            clearInterval(pulseTimer)
-			document.getElementById("bomb").style.animation = "expand 1s 1"
 			document.getElementById("message").innerHTML = 'You Blew Up';
+            clearInterval(pulseTimer);
+			document.getElementById("bomb").style.animation = "expand 1s 1";
         } else if (detonationTimer >= 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
         }
@@ -63,13 +63,14 @@
     }
 
 	let timer = setInterval(updateTimer, 1000);
-	let pulseTimer = setInterval(bombPulse, 100)
-	let fontSize = 20
+
+	let pulseTimer = setInterval(bombPulse, 100);
+	let fontSize = 20;
 	function bombPulse() {
 		if (fontSize === 25) {
-			fontSize -= .5
+			fontSize--;
 		} else {
-			fontSize += .5
+			fontSize++ ;
 		}
 		document.getElementById("bomb").style.fontSize = fontSize + "rem";
 		console.log(document.getElementById("bomb").style.fontSize);
@@ -82,7 +83,7 @@
     // cancel the interval/timeout for updateTimer()
     function defuseTheBOM() {
 		clearInterval(timer);
-		clearInterval(pulseTimer)
+		clearInterval(pulseTimer);
     }
 
     // Don't modify anything below this line!
