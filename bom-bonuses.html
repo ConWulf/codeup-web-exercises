@@ -10,32 +10,68 @@
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-
-
+<h1 id="timer">0.000</h1>
+<button id="start">click to start</button>
+<button id="stop">click to stop</button>
+<button id="reset">click to reset</button>
 <script>
+"use strict"
+	// ==== SUGGESTED DOM EVENT BONUSES
+	// BONUS 1 - create a stop watch app
+	// 1) stop watch display that shows the time to the nearest 100th of a second
+	// 2) start button to start the stop watch
+	// 3) reset button to reset the time to zero
+	// 4) pause button to stop the stop watch
+	// Additional Features:
+	// 		1) store a list of times in an aside div that are appended to every time the reset button is hit
+	// 2) add delete buttons for each stored time that removes the time from the aside div
+	// 3) add keyboard events to control starting, pausing, and resetting
+	// BONUS 2 - create a Hangman game
+	// Allow user 1 to enter a random word for user 2 to try to guess.
+	// - display the number of guesses
+	// - display the letters already attempted
+	// - display the word as it is being completed and the letters not already guessed with underscores
+	// - a form should allow the user to type a letter guess
+	// - do not accept inputs that are more than one letter or are not letters (ignore case)
+	// BONUS 3 - Create a zoomable font size effect with mouse scroll
 
+	var start = document.getElementById("start");
+	var stop = document.getElementById("stop");
+	var reset = document.getElementById("reset");
+	var h1 = document.getElementById("timer");
+	let stopWatch = {
+		intervalId: 0,
+		count: parseFloat(h1.innerHTML.charAt(h1.innerHTML.length - 1)),
+		start: function () {
+			stopWatch.count+= .001;
+			// console.log(stopWatch.intervalId);
+			h1.innerHTML = stopWatch.count.toFixed(3);
+		},
+		pause: function () {
+			clearInterval(stopWatch.intervalId);
+		},
+		reset: function () {
+			stopWatch.count = 0;
+			h1.innerHTML = "0.000";
+		}
 
-function playSinging() {
-	console.log("All a-...");
+	};
+	// setInterval(stopWatch.start, 1000)
+function interval () {
+	stopWatch.intervalId = setInterval(stopWatch.start, .001);
 }
 
-setInterval(playSinging, 1000);
-			// "All a-..."
-			// "-round the ..."
-			// "mulberry..."
-			// "bush, The..."
-			// "monkey..."
-			// "chased the..."
-			// "wea-..."
-			// "-sel..."
-			// "The monkey..."
-			// "stopped to..."
-			// "pull up his..."
-			// "sock..."
-			// "Pop!..."
-			// "goes the..."
-			// "wea-..."
-			// "-sel."
+	// console.log(stopWatch.count);
+	// h1.innerHTML = stopWatch.count;
+start.addEventListener("click", interval)
+
+	function remove() {
+		// start.removeEventListener("click", interval);
+		stopWatch.pause();
+	}
+
+	stop.addEventListener("click", remove);
+	reset.addEventListener("click", stopWatch.reset);
 
 
 </script>
