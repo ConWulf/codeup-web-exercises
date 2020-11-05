@@ -11,6 +11,8 @@
 // Zoom levels range from 0 up to 24, with 0 being a global view and 24 being the most detailed at street level (the max zoom level depends on the location).
 
 //TODO TOGETHER: Set map to san antonio area using the coordinates [-98.4916, 29.4252]
+(function () {
+
 
 mapboxgl.accessToken = mapboxKey;
 var mapOptions = {
@@ -143,4 +145,4 @@ geocode("600 Navarro St #350, San Antonio, TX 78205", mapboxKey).then(result => 
 //     console.log(result);
 // })
 
-
+})()
