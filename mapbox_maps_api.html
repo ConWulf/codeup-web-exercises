@@ -10,13 +10,46 @@
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-	<style>
-
-	</style>
 </head>
+<style>
+
+	* {
+		box-sizing: border-box;
+	}
+
+	#map {
+		width: 100%;
+		height: 80vh;
+	}
+
+	.map-container {
+		width: 100vw;
+		height: 100vh;
+		background-color: #0A1045;
+	}
+
+	#zoom {
+		width: 5em;
+	}
+
+</style>
 <body>
-<div id='map' style='width: 100%; height: 500px;'></div>
-<button id="fly">Fly</button>
+
+<div class="container-fluid map-container d-flex flex-column justify-content-end align-items-center flex-bas">
+
+	<div class="container d-flex">
+		<button id="flyBtn">fly to restaurant1</button>
+		<button id="flyToGloryBtn">fly to restaurant2</button>
+		<button id="flyToR2">fly to restaurant3</button>
+		<select name="zoom" id="zoom">
+			<option id="5" class="zoomAmount" value="5">5</option>
+			<option id="15" class="zoomAmount" value="15">15</option>
+			<option id="20" class="zoomAmount" value="20">20</option>
+		</select>
+	</div>
+
+	<div id='map'></div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -29,7 +62,6 @@
 		crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
-<script src="js/mapbox-lec.js"></script>
-
+<script src="js/mapbox_exercise.js"></script>
 </body>
 </html>

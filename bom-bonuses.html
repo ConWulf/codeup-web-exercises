@@ -10,7 +10,7 @@
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1 id="timer">0.000</h1>
+<h1 id="timer">0.00</h1>
 <button id="start">click to start</button>
 <button id="stop">click to stop</button>
 <button id="reset">click to reset</button>
@@ -43,7 +43,7 @@
 		intervalId: 0,
 		count: parseFloat(h1.innerHTML.charAt(h1.innerHTML.length - 1)),
 		start: function () {
-			stopWatch.count+= .001;
+			stopWatch.count+= .01;
 			// console.log(stopWatch.intervalId);
 			h1.innerHTML = stopWatch.count.toFixed(3);
 		},
@@ -52,13 +52,13 @@
 		},
 		reset: function () {
 			stopWatch.count = 0;
-			h1.innerHTML = "0.000";
+			h1.innerHTML = "0.00";
 		}
 
 	};
 	// setInterval(stopWatch.start, 1000)
 function interval () {
-	stopWatch.intervalId = setInterval(stopWatch.start, .001);
+	stopWatch.intervalId = setInterval(stopWatch.start, 10);
 }
 
 	// console.log(stopWatch.count);
