@@ -6,15 +6,15 @@
 </head>
 <body>
 <h1 class="tittle" id="h1">jQuery exercise</h1>
-<div class="container" id="p-box">
+<div class="codeup" id="p-box">
 	<p class="banana" id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate delectus dolore fugit laboriosam molestias quo reprehenderit. Assumenda facere laborum mollitia nulla odio, qui repellendus? Animi corporis dicta molestias omnis.</p>
 </div>
 
 <ul class="unorderedList" id="bulletList">
-	<li class="unorderedItem" id="1">mango</li>
-	<li class="unorderedItem" id="2">dragon fruit</li>
-	<li class="unorderedItem" id="3">kiwi</li>
-	<li class="unorderedItem" id="4">pineapple</li>
+	<li class="codeup" id="1">mango</li>
+	<li class="codeup" id="2">dragon fruit</li>
+	<li class="codeup" id="3">kiwi</li>
+	<li class="" id="4">pineapple</li>
 </ul>
 
 <ol class="orderedList" id="numList">
@@ -29,7 +29,24 @@
 <script>
 	$(document).ready(() => {
 		"use strict";
-		alert("finished loading");
+		// alert("finished loading");
+
+		// var ulId = $('#3');
+		// alert(ulId.html());
+
+	// var listItemClass = $('.codeup')
+	// 	listItemClass.css({border: '1px solid red', color: 'salmon'})
+
+		var listItem = $('li');
+		var paragraph = $('p');
+		var header = $('h1');
+		listItem.css('font-size', '20px');
+		listItem.css('background-color', 'yellow');
+		paragraph.css('background-color', 'yellow');
+		header.css('background-color', 'yellow');
+
+
+
 	})
 
 </script>
