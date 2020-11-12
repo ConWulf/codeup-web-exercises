@@ -8,6 +8,7 @@
 <h1 class="tittle" id="h1">jQuery exercise</h1>
 <div class="codeup" id="p-box">
 	<p class="banana" id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate delectus dolore fugit laboriosam molestias quo reprehenderit. Assumenda facere laborum mollitia nulla odio, qui repellendus? Animi corporis dicta molestias omnis.</p>
+	<p class="banana">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam cupiditate delectus dolore fugit laboriosam molestias quo reprehenderit. Assumenda facere laborum mollitia nulla odio, qui repellendus? Animi corporis dicta molestias omnis.</p>
 </div>
 
 <ul class="unorderedList" id="bulletList">
@@ -37,17 +38,33 @@
 	// var listItemClass = $('.codeup')
 	// 	listItemClass.css({border: '1px solid red', color: 'salmon'})
 
-		// var listItem = $('li');
-		// var paragraph = $('p');
-		// var header = $('h1');
-		var multiple = $('li, p, h1');
+		var listItem = $('li');
+		var paragraph = $('p');
+		var header = $('h1');
+		// var multiple = $('li, p, h1');
 		// listItem.css('font-size', '20px');
 		// listItem.css('background-color', 'yellow');
 		// paragraph.css('background-color', 'yellow');
 		// header.css('background-color', 'yellow');
-		multiple.css('background-color', 'yellow')
-		alert(multiple.html())
+		// multiple.css('background-color', 'yellow')
+		// alert(multiple.html())
 
+		function changeH1() {
+			header.css('backgroundColor', 'pink');
+		}
+		function changeFontSize() {
+			paragraph.css('fontSize', '18px');
+		}
+		function changeTextColor() {
+			$(this).css('color', 'red');
+		}
+		function revertTextColor() {
+			$(this).css('color', 'inherit');
+		}
+
+		paragraph.dblclick(changeFontSize);
+		header.click(changeH1);
+		listItem.hover(changeTextColor, revertTextColor);
 
 
 
