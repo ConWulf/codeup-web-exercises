@@ -46,19 +46,24 @@
 	let konamiStr = "ArrowUp ArrowUp ArrowDown ArrowDown ArrowLeft ArrowRight ArrowLeft ArrowRight b a Enter"
 	let konamiConcat = "";
 	// let konamiArr = [];
-	let cabbageAudio = new Audio('audio/my-cabbages.mp3');
+	// let cabbageAudio = new Audio('audio/my-cabbages.mp3');
+		let count = 10;
 		// setInterval(function () {
 		// 	console.log(cabbageAudio.currentTime);
 		// }, 100)
 
+
 		setInterval(function () {
-			konamiConcat = "";
-		}, 5000);
+			count--
+		}, 1000);
+
+		$('body').append(`timer ${count}`)
 
 	$(document).keyup(function(e){
 		konamiConcat += ` ${e.key}`
 		// konamiArr.push(e.key);
 		// let joinedArr = konamiArr.join(" ");
+
 		if (konamiConcat.trim() === konamiStr) {
 			$('#gif').modal('show');
 			$('#gifBody').css("backgroundColor", "#1969B2");
