@@ -142,10 +142,27 @@ $(document).ready(function() {
     /**********************************************
      * 			       Traversing
      *********************************************/
+    
+    $('div').each(function () {
+        $(this).css('color', '#9f4')
+    });
+
 
     //TODO TOGETHER: Using the each method, highlight every other list item in the Ravenclaw house
+    $('#ravenclaw').children().each(function (i) {
+            if (i % 2 === 0) {
+                $(this).css('background-color', '#ff0');
+            }
+    })
+
+
     //TODO TOGETHER: Change the font color of the first list element in Hufflepuff
+
+        $('#hufflepuff').children().first().css('color', "#ab7790");
+
     //TODO TOGETHER: Change the font color of the last list element in Slytherin
+        $('#slytherin').children().last().css('color', '#af4500')
+
 
     //TODO TOGETHER: When the 'Witches' button is clicked, highlight all names that have been assigned the class of 'witches'
     $('#highlight-witches').click(function(e){
@@ -165,10 +182,12 @@ $(document).ready(function() {
         });
     });
 
+    console.log($('#listItem').parents());
+
     //BONUS: .prev() method
 
-    // $('ul').click(function(e){
-    //     $(this).prev().addClass('gryffindor');
-    // });
+    $('ul').click(function(e){
+        $(this).prev().addClass('gryffindor');
+    });
 
 });

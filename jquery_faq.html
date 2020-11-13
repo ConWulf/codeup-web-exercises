@@ -39,9 +39,47 @@
 			width: 5em;
 		}
 
+		.highlightLi {
+			background-color: yellow;
+		}
+
+		.headings {
+			font-weight: bold;
+		}
+
+		.blue {
+			color: #007EA7;
+		}
+
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		img	{
+			border: 5px solid #554;
+			background-image: radial-gradient(#334 80%, #554 20%);
+			padding: 10px;
+			width: 95%;
+		}
+
+		span {
+			font-size: 16px;
+		}
+
+		ul {
+			display: none;
+		}
+
 	</style>
 </head>
 <body>
+
+<div class="wrapper" id="newsletter">
+	<h1>"Would you like to sign up for our newsletter?" <span id="close"><a href="#">X<a></span></h1>
+</div>
+
+<h2>Celestial Bodies FAQ</h2>
 
 <dl>
 	<dt class="" id="andromeda">Andromeda</dt>
@@ -86,6 +124,36 @@
 	</dd>
 </dl>
 
+<button class="highlighter">Highlight</button>
+
+<h3>Andromeda</h3>
+<Ul>
+	<li>It is about 10 billion years old</li>
+	<li>It is approaching the Milky Way at 100-140 Km per second and
+		is expected to eventually collide with the Milky Way</li>
+	<li>It is the most distant object you can spot with the naked eye</li>
+	<li>It is a spiral galaxy</li>
+</Ul>
+<h3>Betelgeuse</h3>
+<Ul>
+	<li>Betelgeuse is a red supergiant</li>
+	<li>It can be seen with the naked eye</li>
+	<li>its mass has been estimated to be around 10 – 20 stellar masses</li>
+	<li>If Betelgeuse were to replace or Sun, its surface would extend beyond the asteroid belt</li>
+</Ul>
+<h3>Jupiter</h3>
+<Ul>
+	<li>The ancient Babylonians were the first to record their sightings of Jupiter.</li>
+	<li>Jupiter has the shortest day of all the planets.</li>
+	<li>Jupiter has liquid metallic hydrogen bellow its atmosphere (possibly)</li>
+	<li>Jupiter has a thin ring system.</li>
+</Ul>
+<div class="wrapper">
+	<div class="frame" id="galaxy"><img src="img/andromeda-11004_1280.jpg" alt=""></div>
+	<div class="frame" id="star"><img src="img/photo_space_betelgeuse_1_potw1726a.jpg" alt=""></div>
+	<div class="frame" id="blackHole"><img src="img/blackhole.png" alt=""></div>
+</div>
+
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
 		crossorigin="anonymous"></script>
 <!--<script src="js/jquery-2.2.4.js"></script>-->
@@ -93,6 +161,68 @@
 <script>
 	$(document).ready(function () {
 		var link = $('dt');
+		var highlightBtn = $('.highlighter');
+		var facts = $('ul');
+		var headings = $('h3');
+		var factList = $('li');
+		var galaxy = $('#galaxy');
+		var star = $('#star');
+		var blackHole = $('#blackHole');
+		var closePopup = $('#close');
+		
+		setTimeout(function () {
+			
+		})
+
+		closePopup.click(function (e) {
+			e.preventDefault();
+			$('#newsletter').slideUp();
+		});
+
+		headings.click(function () {
+			$(this).next().slideToggle();
+		})
+
+		function img(src) {
+			return `<img  alt="space" src="${src}">`
+		}
+
+		galaxy.click(function () {
+			$(this).html($(this).next().html());
+			$(this).next().html($(this).parent().children().last().html());
+			$(this).parent().children().last().html(img('img/andromeda-11004_1280.jpg'));
+		});
+
+		blackHole.click(function () {
+			$(this).html($(this).prev().html());
+			$(this).prev().html($(this).parent().children().first().html());
+			$(this).parent().children().first().html(img('img/blackhole.png'))
+		})
+
+		star.click(function () {
+			var randomNumber = Math.floor(Math.random()*2);
+			console.log(randomNumber);
+			if (randomNumber === 0) {
+				$(this).html($(this).next().html());
+			} else	{
+				$(this).html($(this).prev().html())
+			}
+		})
+
+		highlightBtn.click(function (e) {
+			e.preventDefault();
+			facts.each(function () {
+				$(this).children().last().toggleClass('highlightLi')
+			});
+		});
+
+		headings.click(function () {
+			$(this).next().toggleClass('headings')
+		});
+		
+		factList.click(function () {
+			$(this).parent().children().first().toggleClass('blue');
+		})
 		
 		link.hover(function () {
 			$(this).css('color', '#ab56ed')
@@ -101,13 +231,10 @@
 		});
 
 		link.click(function () {
-			$(this).next().toggleClass('hidden');
 			$(this).toggleClass('highlight')
-		})
+			$(this).next().toggleClass('hidden');
 
-
-
-
+		});
 	});
 
 </script>
