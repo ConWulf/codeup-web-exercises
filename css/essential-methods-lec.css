@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 175px;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+li {
+    text-align: center;
+    margin: 0;
+}
+section {
+    margin-top: 3%;
+}
+div.row{
+    margin-top: 2em;
+}
+.banner {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.witch {
+    color: pink;
+}
+
+.house {
+    background-color: #06bfaf;
+}
+
+.gryffindor {
+    background-color: #bb2233;
+}
+
+.slytherin {
+    background-color: #0fb784;
+}
+
+.ravenclaw {
+    background-color: #002868;
+}
+
+.hufflepuff {
+    background-color: #FFCD33;
+}
