@@ -13,5 +13,10 @@
         "orderNumber": 3,
         "itemOrdered": "Huge Hat",
         "orderedBy": "Ronnie"
+    },
+    {
+        "orderNumber": 0,
+        "itemOrdered": "Small Hat",
+        "orderedBy": "Bob"
     }
 ]

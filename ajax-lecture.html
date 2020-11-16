@@ -112,15 +112,15 @@
             //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
             // });
 
-	// 	$.ajax('data/orders.json').done(function (data) {
-	// 		var total = 0
-	// 		data.forEach(function (order) {
-	// 			total += order.orderNumber;
-	// 		});
-	// 		$('#main').append(`<div>total orders: ${total}</div>`)
-	// 	})
-	//
-    // });
+		$.ajax('data/orders.json').done(function (data) {
+			var total = 0
+			data.forEach(function (order) {
+				total += order.orderNumber;
+			});
+			$('#main').append(`<div>total orders: ${total}</div>`)
+		})
+
+    });
 
 </script>
 
