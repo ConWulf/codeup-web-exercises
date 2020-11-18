@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    let weatherCard = $('#weatherInfo');
-    let currentWeather = $('#currentInfo');
+    const weatherCard = $('#weatherInfo');
+    const currentWeather = $('#currentInfo');
 
     mapboxgl.accessToken = mapboxKey;
-    let mapObj = {
+    const mapObj = {
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
         center: [-98.49, 29.42], // starting position [lng, lat]
@@ -12,27 +12,45 @@ $(document).ready(function () {
         minZoom: 2
     }
 
-    let markerStyle = {
+    const markerStyle = {
         draggable: true
     }
 
-    let map = new mapboxgl.Map(mapObj);
-    let marker = new mapboxgl.Marker(markerStyle)
+    const map = new mapboxgl.Map(mapObj);
+    const marker = new mapboxgl.Marker(markerStyle)
         .setLngLat([-98.49, 29.42])
         .addTo(map);
 
 
     marker.on("dragend", function () {
         let getCoordinates = marker.getLngLat();
-        renderWeather(getCoordinates.lng, getCoordinates.lat);
-        currentWeatherData(getCoordinates.lng, getCoordinates.lat);
+        renderFiveDayWeather(getCoordinates.lng, getCoordinates.lat);
+        renderCurrentWeather(getCoordinates.lng, getCoordinates.lat);
     });
+
+
+    // var count = 0
+    // function f() {
+    //     setTimeout(f, 1000);
+    //     count+=1
+    //     console.log(count);
+    // }
+    //
+    // f();
+
+    map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        })
+    )
 
     function currentWeatherData(weatherObj) {
         let cardHtml = "";
-        cardHtml += '<div class="card" id="current">'
+        cardHtml += '<div class="card" id="currentWeather">'
         cardHtml += `<div class="card-header">
-                 <h6 class="card-subtitle mb-2 text-muted">${dates(weatherObj.current.dt)}</h6>
+                 <h5 class="card-subtitle mb-2 text-muted">${dates(weatherObj.current.dt)}</h5>
+                 <h6 class="card-subtitle mb-2 text-muted">${times(weatherObj.current.dt)}</h6>
                  </div>`
         cardHtml += '<div class="card-body">'
         cardHtml += `<p class="card-text">Temperature: ${weatherObj.current.temp}°F</p>`
@@ -41,7 +59,9 @@ $(document).ready(function () {
                 <p class="card-text">UV Index: ${weatherObj.current.uvi}</p>`
         cardHtml += '</div>'
         cardHtml += '</div>'
+
         return cardHtml;
+
     }
 
     function fiveDayWeatherData(weatherObj) {
@@ -73,7 +93,7 @@ $(document).ready(function () {
     function times(unixTime) {
         let milliseconds = unixTime * 1000;
         let dateObj = new Date(milliseconds);
-        let options = {hour: "numeric", timeZoneName: "short"}
+        let options = {hour: "numeric", minute: "numeric", second: "numeric", timeZoneName: "short"}
         return dateObj.toLocaleString("en-US", options);
     }
 
@@ -88,7 +108,7 @@ $(document).ready(function () {
     }
 
 
-    function renderWeather(lng, lat) {
+    function renderFiveDayWeather(lng, lat) {
         $.get('https://api.openweathermap.org/data/2.5/onecall', {
             "appid": openWeatherKey,
             "lat": lat,
@@ -107,7 +127,7 @@ $(document).ready(function () {
                 }
             }
             weatherCard.html(cards);
-            console.log(data);
+            // console.log(data);
         }).fail(function () {
             weatherCard.html(`<h3>we cannot find that location</h3>`);
         });
@@ -130,7 +150,7 @@ $(document).ready(function () {
         });
     }
 
-    renderWeather(-98.49, 29.42)
+    renderFiveDayWeather(-98.49, 29.42)
     renderCurrentWeather(-98.49, 29.42)
 
 
