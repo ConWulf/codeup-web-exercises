@@ -9,25 +9,15 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-	<link
-			rel="stylesheet"
-			href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
-			type="text/css"
-	/>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+		  type="text/css"/>
 	<link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Navbar</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		<div class="navbar-nav">
-			<a class="nav-item nav-link" href="#"></a>
-		</div>
-	</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex text-center text-sm-left">
+	<a class="navbar-brand flex-grow-1" href="#">Navbar</a>
+	<a class="nav-link" href="#" id="location"></a>
 </nav>
 
 <br>
@@ -38,7 +28,7 @@
 <!--map-->
 	<div class="container-fluid map-container">
 		<div id='map' class="weather-map"></div>
-	</div>\
+	</div>
 <!--five day card container-->
 <div class="container-fluid d-flex flex-wrap mb-3" id="weatherInfo"></div>
 

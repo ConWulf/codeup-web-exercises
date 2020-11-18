@@ -2,25 +2,32 @@ $(document).ready(function () {
 
     const weatherCard = $('#weatherInfo');
     const currentWeather = $('#currentInfo');
+    const location = $('#location');
 
     mapboxgl.accessToken = mapboxKey;
     const mapObj = {
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
         center: [-98.49, 29.42], // starting position [lng, lat]
         zoom: 9, // starting zoom
-        minZoom: 2
+        minZoom: 2,
+        style: 'mapbox://styles/mapbox/satellite-streets-v11'
     }
 
     const markerStyle = {
-        draggable: true
+        draggable: true,
+        color: '#ADFCF9'
+    }
+
+    const geocodeOptions = {accessToken: mapboxgl.accessToken,
+        marker: false,
+        reverseGeocode: true,
+        collapsed: true,
     }
 
     const map = new mapboxgl.Map(mapObj);
-    const marker = new mapboxgl.Marker(markerStyle)
+    let marker = new mapboxgl.Marker(markerStyle)
         .setLngLat([-98.49, 29.42])
         .addTo(map);
-
 
     marker.on("dragend", function () {
         let getCoordinates = marker.getLngLat();
@@ -28,22 +35,6 @@ $(document).ready(function () {
         renderCurrentWeather(getCoordinates.lng, getCoordinates.lat);
     });
 
-
-    // var count = 0
-    // function f() {
-    //     setTimeout(f, 1000);
-    //     count+=1
-    //     console.log(count);
-    // }
-    //
-    // f();
-
-    map.addControl(
-        new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
-        })
-    )
 
     function currentWeatherData(weatherObj) {
         let cardHtml = "";
@@ -68,7 +59,7 @@ $(document).ready(function () {
         let cardHtml = "";
         cardHtml += '<div class="card weather-info text-center">'
         cardHtml += `<div class="card-header">
-                 <h5 class="card-subtitle mb-2 text-muted">${dates(weatherObj.dt)}</h5>
+                 <h6 class="card-subtitle mb-2 text-muted">${dates(weatherObj.dt)}</h6>
                  </div>`
         cardHtml += '<div class="card-body">'
         cardHtml += `<p class="card-text">${weatherObj.temp.day}°F</p> ${weatherDescription(weatherObj.weather)}`
@@ -97,7 +88,7 @@ $(document).ready(function () {
         return dateObj.toLocaleString("en-US", options);
     }
 
-
+    //render the icon and description
     function weatherDescription(descriptionArr) {
         let descriptorHtml = "";
         descriptionArr.forEach(function (descriptor) {
@@ -107,7 +98,7 @@ $(document).ready(function () {
         return descriptorHtml;
     }
 
-
+    //ajax request for five day
     function renderFiveDayWeather(lng, lat) {
         $.get('https://api.openweathermap.org/data/2.5/onecall', {
             "appid": openWeatherKey,
@@ -133,6 +124,7 @@ $(document).ready(function () {
         });
     }
 
+    //ajax request for the current weather
     function renderCurrentWeather(lng, lat) {
         $.get('https://api.openweathermap.org/data/2.5/onecall', {
             "appid": openWeatherKey,
@@ -153,5 +145,49 @@ $(document).ready(function () {
     renderFiveDayWeather(-98.49, 29.42)
     renderCurrentWeather(-98.49, 29.42)
 
+    //function to get location name, returns promise
+    function reverseGeocode(coordinates, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+            })
+            // to get all the data from the request, comment out the following three lines...
+            .then(function(data) {
+                return data.features[2].place_name;
+            });
+    }
+
+    // set text on navbar initially
+    reverseGeocode({lng: -98.49, lat: 29.42}, mapboxKey).then(result => {
+        location.text(result);
+    })
+
+    // set location on drag
+    marker.on("dragend", function () {
+        let getCoordinates = marker.getLngLat();
+        reverseGeocode({lng: getCoordinates.lng, lat: getCoordinates.lat}, mapboxKey).then(result => {
+            location.text(result);
+        })
+    });
+// add geocoder
+    var geocoder = new MapboxGeocoder(geocodeOptions);
+    map.addControl(geocoder);
+
+    //remove and marker and reset it on the searched point
+    geocoder.on("result", function (result) {
+        marker.remove();
+        marker = new mapboxgl.Marker(markerStyle)
+            .setLngLat([result.result.center[0], result.result.center[1]])
+            .addTo(map);
+        renderFiveDayWeather(result.result.center[0], result.result.center[1]);
+        renderCurrentWeather(result.result.center[0], result.result.center[1]);
+        marker.on("dragend", function () {
+            let getCoordinates = marker.getLngLat();
+            renderFiveDayWeather(getCoordinates.lng, getCoordinates.lat);
+            renderCurrentWeather(getCoordinates.lng, getCoordinates.lat);
+        });
+    })
 
 });
