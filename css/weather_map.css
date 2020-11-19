@@ -15,6 +15,11 @@ body, html, .main-container {
 
 .weather-info {
     flex-basis: 100%;
+    max-width: 18rem;
+}
+
+.date {
+    min-height: 65px;
 }
 
 .map-container {
@@ -29,6 +34,12 @@ body, html, .main-container {
 
 #weatherInfo {
     max-width: 1440px;
+}
+
+#tempDial {
+    width: 300px;
+    height: auto;
+    background-color: #3B94D9;
 }
 
 @media screen and (min-width: 768px){
