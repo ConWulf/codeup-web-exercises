@@ -7,6 +7,7 @@ body, html, .main-container {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #8aa8a1;
 }
 
 .weather-map {
@@ -27,6 +28,10 @@ body, html, .main-container {
     max-width: 1440px;
 }
 
+.navigation {
+    background-color:#3e5c76;
+}
+
 #currentWeather {
  width: 100%;
  max-width: 768px;
@@ -37,9 +42,12 @@ body, html, .main-container {
 }
 
 #tempDial {
-    width: 300px;
+    width: 100%;
     height: auto;
-    background-color: #3B94D9;
+}
+
+.weather-info {
+
 }
 
 @media screen and (min-width: 768px){
