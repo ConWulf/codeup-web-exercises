@@ -4,29 +4,29 @@
  *    VAR VS. LET VS. CONST
  *****************************/
 
-function checkWeather(isRaining) {
-	if (isRaining) {
-		var umbrella = "Get an umbrella"
-	} else {
-		var sunglasses = "Grab your glasses!"
-		console.log(umbrella);
-	}
-
-}
+// function checkWeather(isRaining) {
+// 	if (isRaining) {
+// 		var umbrella = "Get an umbrella"
+// 	} else {
+// 		var sunglasses = "Grab your glasses!"
+// 		console.log(umbrella);
+// 	}
+//
+// }
 
 // checkWeather(false); //undefined
 
 
 
-function checkWeatherTwo(isRaining) {
-	if (isRaining) {
-		const umbrella = "Get an umbrella"
-	} else {
-		const sunglasses = "Grab your glasses!"
-		console.log(umbrella);
-	}
-
-}
+// function checkWeatherTwo(isRaining) {
+// 	if (isRaining) {
+// 		const umbrella = "Get an umbrella"
+// 	} else {
+// 		const sunglasses = "Grab your glasses!"
+// 		console.log(umbrella);
+// 	}
+//
+// }
 
 // checkWeatherTwo(false) //Uncaught ReferenceError: umbrella is not defined
 
@@ -63,7 +63,7 @@ function checkWeatherTwo(isRaining) {
 // {
 //     let b = 20;
 // }
-//
+
 // const c = 30;
 
 // console.log(a); // 10
@@ -105,10 +105,8 @@ let greeting = "Hello my name is " + firstName + ' ' + lastName + '.';
 
 //TODO: Refactor code from above, using template strings.
 
-
-
-
-
+// let newGreeting = `Hello, my name is ${firstName} ${lastName}`;
+// console.log(newGreeting);
 
 
 /*==============================================*/
@@ -119,15 +117,21 @@ let items = ['apple', 'grape', 'orange'];
 
 
 //old way
-let itemsHtml = "";
-itemsHtml += "<ul>";
-itemsHtml += "<li>" + items[0]+ "</li>"
-itemsHtml += "<li>" + items[1]+ "</li>"
-itemsHtml += "<li>" + items[2]+ "</li>"
-itemsHtml += "</ul>";
-
-// console.log(itemsHtml);
-
+// let itemsHtml = "";
+// itemsHtml += "<ul>";
+// itemsHtml += "<li>" + items[0]+ "</li>"
+// itemsHtml += "<li>" + items[1]+ "</li>"
+// itemsHtml += "<li>" + items[2]+ "</li>"
+// itemsHtml += "</ul>";
+//
+//
+// let newItems = `<ul>
+// <li>${items[0]}</li>
+// <li>${items[1]}</li>
+// <li>${items[2]}</li>
+// </ul>`
+// // console.log(itemsHtml);
+// console.log(newItems);
 
 
 //new way
@@ -151,7 +155,7 @@ let program = {
 
 
 
-
+let programLetter = `Hello and thank you for your interest in ${program.name}`
 
 
 
@@ -176,10 +180,11 @@ let program = {
 //TODO: Using for of loops, log each instructors name
 
 // const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-
-
-
-
+//
+//
+// for (let day of days) {
+// 	console.log(day);
+// }
 
 
 /*==============================================*/
@@ -198,14 +203,13 @@ let program = {
 //TODO TOGETHER: Rewrite the following function using arrow function syntax
 
 
-function sayHello(name){
-	return `Hello ${name}`;
-}
-
-
-
-
-
+// function sayHello(name){
+// 	return `Hello ${name}`;
+// }
+//
+// const sayHelloAgain = name => `Hello ${name}`;
+//
+//
 // console.log(sayHelloAgain("Vivian")); //Hello Vivian
 // console.log(sayHelloAgain("Justin")); //Hello Justin
 // console.log(sayHelloAgain("Sophie")); //Hello Sophie
@@ -215,12 +219,12 @@ function sayHello(name){
 /*==============================================*/
 //TODO TOGETHER: Rewrite the following function using arrow function syntax
 
-function sum(a,b){
-	return a + b;
-}
-
-
-
+// function sum(a,b){
+// 	return a + b;
+// }
+// const sum = (a, b) => a + b;
+//
+//
 // console.log(sum(5, 3)); //8
 // console.log(sum(5, 20)); //25
 // console.log(sum(1, 9)); //10
@@ -231,10 +235,21 @@ function sum(a,b){
 /*==============================================*/
 //TODO: Rewrite the following function using arrow function syntax
 
-function addOne(arg1) {
-    return arg1 + 1;
-}
-
+// function addOne(arg1) {
+//     return arg1 + 1;
+// }
+//
+// let addOneA = function (arg1) {
+// 	return arg1 + 1;
+// }
+//
+// let addOneB = (arg1) => {
+// 	return arg1 + 1;
+// }
+//
+// let addOneC = (arg1) => arg1 + 1;
+//
+// let addOneD = arg1 => arg1 + 1;
 
 // console.log(addOneA(2));
 // console.log(addOneB(2));
@@ -253,16 +268,16 @@ function addOne(arg1) {
 //TODO Together: Refactor the following using ES6
 
 // old way
-function sayHello(name) {
-	if (typeof name === 'undefined') {
-		name = 'World';
-	}
-	return 'Hello, ' + name + '!';
-}
+// function sayHello(name) {
+// 	if (typeof name === 'undefined') {
+// 		name = 'World';
+// 	}
+// 	return 'Hello, ' + name + '!';
+// }
 
 
-
-
+// const sayHello = (name = 'world') => `Hello ${name}`;
+//
 // console.log(sayHello());; // "Hello, World!"
 // console.log(sayHello('codeup'));; // "Hello, codeup!"
 
@@ -272,15 +287,17 @@ function sayHello(name) {
 
 // TODO: Refactor the following function using arrow syntax, default function parameter values, and template strings.
 
-function helloCohort(greeting, cohort){
-	if(typeof greeting === "undefined"){
-		greeting = "Good Morning";
-	}
-	if(typeof cohort === "undefined"){
-		cohort = "Jupiter";
-	}
-
-	return greeting + " " + cohort;
-}
-
-
+// function helloCohort(greeting, cohort){
+// 	if(typeof greeting === "undefined"){
+// 		greeting = "Good Morning";
+// 	}
+// 	if(typeof cohort === "undefined"){
+// 		cohort = "Jupiter";
+// 	}
+//
+// 	return greeting + " " + cohort;
+// }
+//
+// const helloCohort2 = (greeting = "Good Morning", cohort = "Jupiter") => `${greeting} ${cohort}`
+// console.log(helloCohort2("greetings", "name"));
+// console.log(helloCohort2());

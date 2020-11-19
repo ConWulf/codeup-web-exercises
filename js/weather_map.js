@@ -1,5 +1,5 @@
 $(document).ready(function () {
-"use strict"
+    "use strict"
 
     const weatherCard = $('#weatherInfo');
     const currentWeather = $('#currentInfo');
@@ -19,7 +19,8 @@ $(document).ready(function () {
         color: '#ADFCF9'
     }
 
-    const geocodeOptions = {accessToken: mapboxgl.accessToken,
+    const geocodeOptions = {
+        accessToken: mapboxgl.accessToken,
         marker: false,
         reverseGeocode: true,
         collapsed: true,
@@ -41,41 +42,36 @@ $(document).ready(function () {
     getDataOnMove()
 
 
-    function currentWeatherData(weatherObj) {
-        let cardHtml = "";
-        cardHtml += '<div class="card" id="currentWeather">'
-        cardHtml += `<div class="card-header">
+    const currentWeatherData = weatherObj =>
+         `<div class="card" id="currentWeather">
+             <div class="card-header">
                  <h5 class="card-subtitle mb-2 text-muted">${dates(weatherObj.current.dt)}</h5>
                  <h6 class="card-subtitle mb-2 text-muted">${times(weatherObj.current.dt)}</h6>
-                 </div>`
-        cardHtml += '<div class="card-body">'
-        cardHtml += `<p class="card-text">Temperature: ${weatherObj.current.temp}°F</p>
-                  ${weatherDescription(weatherObj.current.weather)}`
-        cardHtml += `<p class="card-text">Humidity: ${weatherObj.current.humidity}%</p>
+              </div>
+              <div class="card-body">
+                  <p class="card-text">Temperature: ${weatherObj.current.temp}°F</p>
+                 ${weatherDescription(weatherObj.current.weather)}
+                 <p class="card-text">Humidity: ${weatherObj.current.humidity}%</p>
                 <p class="card-text">Dew Point: ${weatherObj.current.dew_point}°F</p>
-                <p class="card-text">UV Index: ${weatherObj.current.uvi}</p>`
-        cardHtml += '</div>'
-        cardHtml += '</div>'
+                <p class="card-text">UV Index: ${weatherObj.current.uvi}</p>
+            </div>
+            </div>`;
 
-        return cardHtml;
 
-    }
 
-    function fiveDayWeatherData(weatherObj) {
-        let cardHtml = "";
-        cardHtml += '<div class="card weather-info text-center mb-3">'
-        cardHtml += `<div class="card-header date">
+    const fiveDayWeatherData = weatherObj =>
+         `<div class="card weather-info text-center mb-3">
+         <div class="card-header date">
                  <h6 class="card-subtitle mb-2 text-muted">${dates(weatherObj.dt)}</h6>
-                 </div>`
-        cardHtml += '<div class="card-body">'
-        cardHtml += `<p class="card-text">${weatherObj.temp.day}°F</p> ${weatherDescription(weatherObj.weather)}`
-        cardHtml += `<p class="card-text">Humidity: ${weatherObj.humidity}%</p>
+                 </div>
+         <div class="card-body">
+         <p class="card-text">${weatherObj.temp.day}°F</p> ${weatherDescription(weatherObj.weather)}
+         <p class="card-text">Humidity: ${weatherObj.humidity}%</p>
                 <p class="card-text">Dew Point: ${weatherObj.dew_point}°F</p>
-                <p class="card-text">UV Index: ${weatherObj.uvi}</p>`
-        cardHtml += '</div>'
-        cardHtml += '</div>'
-        return cardHtml;
-    }
+                <p class="card-text">UV Index: ${weatherObj.uvi}</p>
+         </div>
+         </div>`;
+
 
     function dates(unixTime) {
         let milliseconds = unixTime * 1000;
@@ -98,8 +94,8 @@ $(document).ready(function () {
     function weatherDescription(descriptionArr) {
         let descriptorHtml = "";
         descriptionArr.forEach(function (descriptor) {
-            descriptorHtml += `<a class="card-text" href="#"><img src="http://openweathermap.org/img/wn/${descriptor.icon}@2x.png"></a>`
-            descriptorHtml += `<p class="card-text">${descriptor.description}</p>`
+            descriptorHtml += `<a class="card-text" href="#"><img src="http://openweathermap.org/img/wn/${descriptor.icon}@2x.png"></a>
+                               <p class="card-text">${descriptor.description}</p>`
         });
         return descriptorHtml;
     }
@@ -143,7 +139,7 @@ $(document).ready(function () {
             "lang": "ja"
         }).done(function (data) {
             let cards = "";
-                cards += currentWeatherData(data);
+            cards += currentWeatherData(data);
             currentWeather.html(cards);
             console.log(data);
         }).fail(function () {
@@ -159,11 +155,11 @@ $(document).ready(function () {
         let baseUrl = 'https://api.mapbox.com';
         let endPoint = '/geocoding/v5/mapbox.places/';
         return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
-            .then(function(res) {
+            .then(function (res) {
                 return res.json();
             })
             // to get all the data from the request, comment out the following three lines...
-            .then(function(data) {
+            .then(function (data) {
                 return data.features[2].place_name;
             });
     }
