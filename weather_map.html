@@ -9,40 +9,44 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-	<link
-			rel="stylesheet"
-			href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
-			type="text/css"
-	/>
+	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+		  type="text/css"/>
 	<link rel="stylesheet" href="css/weather_map.css">
 </head>
-<body>
+<body onload="init();">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Navbar</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		<div class="navbar-nav">
-			<a class="nav-item nav-link" href="#"></a>
-		</div>
-	</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex text-center text-sm-left">
+	<a class="navbar-brand flex-grow-1" href="#">Navbar</a>
+	<a class="nav-link" href="#" id="location"></a>
 </nav>
 
 <br>
 
 <div class="container-fluid main-container">
 <!--current weather card container-->
-	<div class="container-fluid text-center d-flex justify-content-center mb-3" id="currentInfo"></div>
+	<div class="container-fluid text-center d-flex justify-content-center mb-3" id="currentInfo">
+		<div class="card" id="currentWeather">
+		        <div class="card-header">
+			                 <h5 class="card-subtitle mb-2 text-muted">${dates(weatherObj.current.dt)}</h5>
+			                 <h6 class="card-subtitle mb-2 text-muted">${times(weatherObj.current.dt)}</h6>
+			                 </div>
+		        <div class="card-body">
+					<canvas id="tempDial"></canvas>
+			        <p class="card-text">Temperature: ${weatherObj.current.temp}°F</p>
+			                  ${weatherDescription(weatherObj.current.weather)}
+			        <p class="card-text">Humidity: ${weatherObj.current.humidity}%</p>
+			                <p class="card-text">Dew Point: ${weatherObj.current.dew_point}°F</p>
+			                <p class="card-text">UV Index: ${weatherObj.current.uvi}</p>
+			        </div>
+		        </div></div>
 <!--map-->
 	<div class="container-fluid map-container">
 		<div id='map' class="weather-map"></div>
-	</div>\
+	</div>
 <!--five day card container-->
 <div class="container-fluid d-flex flex-wrap mb-3" id="weatherInfo"></div>
 
-
+<div class="container"></div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -55,7 +59,9 @@
 		crossorigin="anonymous"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/weather_map.js"></script>
+<script src="js/radial-dial.js"></script>
 </body>
 </html>
