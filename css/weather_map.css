@@ -2,12 +2,23 @@
     box-sizing: border-box;
 }
 
+:root {
+    --nav-bg-color: #d9e4f5;
+    --card-text-gradient-color2: #009ffd;
+    --bg-color: #CCD7C5;
+    --bg-gradient-color1: #d9e4f5;
+    --bg-gradient-color2: #f5e3e6;
+    --card-gradient-color1: #9eabe4;
+    --card-gradient-color2: #77eed8;
+
+}
+
 body, html, .main-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: #8aa8a1;
+    background-color: var(--bg-color);
 }
 
 .weather-map {
@@ -17,6 +28,9 @@ body, html, .main-container {
 .weather-info {
     flex-basis: 100%;
     max-width: 18rem;
+    background-color: var(--nav-bg-color);
+    background-image: linear-gradient(315deg, var(--card-gradient-color1)0%, var(--card-gradient-color2)74%);
+    color: var(--card-text-gradient-color2);
 }
 
 .date {
@@ -24,17 +38,39 @@ body, html, .main-container {
 }
 
 .map-container {
-    height: 69%;
+    height: 100%;
     max-width: 1440px;
 }
 
-.navigation {
-    background-color:#3e5c76;
+.test {
+    border-radius: 15px;
 }
 
+.navigation {
+    background-color: var(--bg-color);
+    background-image: linear-gradient(315deg, var(--bg-gradient-color1)0%, var(--bg-gradient-color2)74%);
+    position: fixed;
+    width: 100vw;
+    z-index: 500;
+    margin-bottom: 10px;
+}
+
+.link-container {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
 #currentWeather {
- width: 100%;
- max-width: 768px;
+    width: 100%;
+    max-width: 768px;
+    background-color: var(--nav-bg-color);
+    background-image: linear-gradient(315deg, var(--card-gradient-color1)0%, var(--card-gradient-color2)74%);
+    color: var(--card-text-gradient-color2);
+    margin-top: 5rem;
 }
 
 #weatherInfo {
@@ -46,18 +82,33 @@ body, html, .main-container {
     height: auto;
 }
 
-.weather-info {
+.navbar-brand {
 
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     .weather-info {
         flex-basis: 50%;
     }
+
+    .weather-info:nth-child(n + 2) {
+        margin-left: 5px;
+    }
+
 }
 
-@media screen and (min-width: 1024px){
+
+
+@media screen and (min-width: 1024px) {
     .weather-info {
         flex-basis: 20%;
+    }
+
+    .weather-info {
+        max-width: 14rem;
+    }
+
+    .weather-info:nth-child(n + 2) {
+        margin-left: 5px;
     }
 }
