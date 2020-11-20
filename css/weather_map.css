@@ -10,7 +10,6 @@
     --bg-gradient-color2: #f5e3e6;
     --card-gradient-color1: #9eabe4;
     --card-gradient-color2: #77eed8;
-
 }
 
 body, html, .main-container {
@@ -53,16 +52,11 @@ body, html, .main-container {
     width: 100vw;
     z-index: 500;
     margin-bottom: 10px;
-}
-
-.link-container {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     justify-content: center;
 }
-
-
 
 #currentWeather {
     width: 100%;
@@ -86,6 +80,11 @@ body, html, .main-container {
 
 }
 
+@media screen and (min-width: 436px) {
+    .navigation {
+        justify-content: space-evenly;
+    }
+}
 @media screen and (min-width: 768px) {
     .weather-info {
         flex-basis: 50%;
@@ -96,8 +95,6 @@ body, html, .main-container {
     }
 
 }
-
-
 
 @media screen and (min-width: 1024px) {
     .weather-info {
