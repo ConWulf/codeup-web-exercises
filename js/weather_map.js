@@ -26,7 +26,6 @@ $(document).ready(function () {
         marker: false,
         reverseGeocode: true,
         collapsed: true,
-        language: "ja"
     }
 
     const map = new mapboxgl.Map(mapObj);
@@ -114,15 +113,9 @@ $(document).ready(function () {
             units: "imperial"
         }).done(data => {
             let cards = "";
-            let counter = 0;
-            for (const days of data.daily) {
-                counter += 1;
-                if (counter === 1) {
-                    continue;
-                }
-                cards += fiveDayWeatherData(days);
-                if (counter === 6) {
-                    break;
+            for (const [i, days] of data.daily.entries()) {
+                if (i > 0 && i < 6) {
+                    cards += fiveDayWeatherData(days)
                 }
             }
             weatherCard.html(cards);
@@ -165,6 +158,10 @@ $(document).ready(function () {
                 return data.features[2].place_name;
             });
     }
+
+    reverseGeocode({lng: -98.49, lat: 29.42}, mapboxKey).then(result => {
+        location.text(result);
+    })
 
     // set text on navbar initially
     reverseGeocode({lng: -98.49, lat: 29.42}, mapboxKey).then(result => {
