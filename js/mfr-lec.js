@@ -200,3 +200,12 @@ var hamsters = [
     }
 ];
 
+
+let uniqueFur = hamsters.reduce((furs, currentFur) => {
+   currentFur.fur.forEach(fur => furSet.add(fur));
+    // console.log(furs);
+    return Array.from(furSet);
+}, []);
+
+console.log(uniqueFur);
+console.log(furSet);

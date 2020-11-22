@@ -52,10 +52,14 @@ body, html, .main-container {
     width: 100vw;
     z-index: 500;
     margin-bottom: 10px;
+}
+
+.link-container {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1400px;
 }
 
 #currentWeather {
@@ -76,14 +80,14 @@ body, html, .main-container {
     height: auto;
 }
 
-.navbar-brand {
 
-}
 
-@media screen and (min-width: 436px) {
-    .navigation {
-        justify-content: space-evenly;
+@media screen and (min-width: 556px) {
+
+    .link-container {
+        justify-content: space-between;
     }
+
 }
 @media screen and (min-width: 768px) {
     .weather-info {

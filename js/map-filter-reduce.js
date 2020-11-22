@@ -1,4 +1,5 @@
 (function () {
+    "use strict";
     const users = [
         {
             id: 1,
@@ -49,8 +50,8 @@
 
     // let longestEmail = emails.reduce((longest, currentEmailLength) =>  longest.length > currentEmailLength.length ? longest: currentEmailLength)
 
-    let longestEmail2 = users.reduce((longest, currentEmailLength) => longest.length > currentEmailLength.email.length ? longest: currentEmailLength.email, "");
-    console.log(longestEmail2);
+    // let longestEmail2 = users.reduce((longest, currentEmailLength) => longest.length > currentEmailLength.email.length ? longest: currentEmailLength.email, "");
+    // console.log(longestEmail2);
 
     // console.log(longestEmail);
 
@@ -58,12 +59,19 @@
     //
     // console.log(mapNames);
 
-    let names = users.reduce((names, currentName) => {
-            // console.log(names, currentName.name);
-            // console.log(names);
-            // console.log(names.substr(names.length - currentName.name.length));
-            return [`${names} ${currentName.name}`]}
-    , ["Your instructors are:",]).join(' ')
+    let names = `${users.reduce((names, currentName) => `${names}, ${currentName.name}`, "Your instructors are:")}.`.replace(",", "")
 
-    // console.log(names);
+    console.log(names);
+
+let languagesSet = new Set();
+let uniqueLanguages = users.reduce((lang, currentLanguage) => {
+   currentLanguage.languages.forEach(language => languagesSet.add(language))
+    console.log(lang);
+    return Array.from(languagesSet)
+}, []);
+
+
+    console.log(uniqueLanguages);
+
+
 })();
