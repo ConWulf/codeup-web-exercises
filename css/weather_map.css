@@ -10,6 +10,7 @@
     --bg-gradient-color2: #f5e3e6;
     --card-gradient-color1: #9eabe4;
     --card-gradient-color2: #77eed8;
+    --hover-color: #045;
 }
 
 body, html, .main-container {
@@ -62,17 +63,29 @@ body, html, .main-container {
     max-width: 1400px;
 }
 
+.navigation a {
+    color: black;
+}
+
+.navigation a:hover {
+    color: var(--hover-color);
+}
+
 #currentWeather {
     width: 100%;
     max-width: 768px;
-    background-color: var(--nav-bg-color);
-    background-image: linear-gradient(315deg, var(--card-gradient-color1)0%, var(--card-gradient-color2)74%);
+    background-color: transparent;
+    /*background-color: var(--nav-bg-color);*/
+    /*background-image: linear-gradient(315deg, var(--card-gradient-color1)0%, var(--card-gradient-color2)74%);*/
     color: var(--card-text-gradient-color2);
     margin-top: 5rem;
 }
 
 #weatherInfo {
-    max-width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 16px 0;
 }
 
 #tempDial {
@@ -88,28 +101,42 @@ body, html, .main-container {
         justify-content: space-between;
     }
 
+    #currentWeather {
+        /*margin-top: 4rem;*/
+    }
+
+    .weather-info:nth-child(n + 2) {
+        margin-left: 16px;
+    }
 }
 @media screen and (min-width: 768px) {
     .weather-info {
         flex-basis: 50%;
+        display: inline-block;
     }
 
-    .weather-info:nth-child(n + 2) {
-        margin-left: 5px;
+    #weatherInfo {
+        display: inline-block;
+        width: 100vw;
+        overflow: auto;
+        white-space: nowrap;
+        margin: 16px 0;
+        padding: 0 16px;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
-    .weather-info {
-        flex-basis: 20%;
+
+
+
+}
+
+@media screen and (min-width: 2560px) {
+    #weatherInfo {
+        display: flex;
+        justify-content: center;
     }
 
-    .weather-info {
-        max-width: 14rem;
-    }
 
-    .weather-info:nth-child(n + 2) {
-        margin-left: 5px;
-    }
 }
