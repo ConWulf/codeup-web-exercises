@@ -95,7 +95,7 @@
 	// ============ Fetch API
 
 	// jQuery AJAX request example
-	// $.ajax('https://swapi.co/api/people/1')
+	// $.ajax('https://swapi.dev/api/people/1')
 	//     .done(function(data) {
 	//         console.log(data);
 	//     })
@@ -104,7 +104,7 @@
 	//     });
 
 	// Fetch API GET example
-	//     fetch('https://swapi.co/api/people/1')
+	//     fetch('https://swapi.dev/api/people/1')
 	//         .then((response) => {
 	//             return response.json();
 	//         })
@@ -115,7 +115,7 @@
 
 	// Fetch API POST example
 
-	// fetch('https://hookb.in/eKZ0mV6k1aTr9g86Q7JM', {
+	// fetch('https://hookb.in/VGm9dgxBlKHE22bwzDr6', {
 	//     method: 'POST',
 	//     headers: {
 	//         'Content-Type': 'application/json'
@@ -127,22 +127,6 @@
 	// })
 	//     .then(console.log)
 	//     .catch(console.log);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	//  ============ NY Times Articles Based on Forecast of Current Location
@@ -230,35 +214,35 @@
 
 	// ============ Promise.all()
 
-	// const getCoffee = (type) => {
-	//     return processOrder(type);
-	// };
-	//
-	// const processOrder = (type) => {
-	//
-	//     let orderAndPay = new Promise((resolve, reject) => {
-	//         setTimeout(function() {
-	//             resolve(`Coffee of type ${type} has been ordered and paid for!`);
-	//         }, 2000);
-	//     });
-	//
-	//     let makeOrder = new Promise((resolve, reject) => {
-	//         setTimeout(function() {
-	//             resolve(`Coffee of type ${type} is ready!`);
-	//         }, 4000);
-	//     });
-	//
-	//     return Promise.all([orderAndPay, makeOrder]);
-	//
-	// };
-	//
-	// getCoffee("espresso").then((data) => {
-	//     console.log(data[0]);
-	//     console.log(data[1]);
-	//     console.log("You now have a coffee!");
-	// }).catch((err) => {
-	//     console.log(err)
-	// });
+	const getCoffee = (type) => {
+	    return processOrder(type);
+	};
+
+	const processOrder = (type) => {
+
+	    let orderAndPay = new Promise((resolve, reject) => {
+	        setTimeout(function() {
+	            resolve(`Coffee of type ${type} has been ordered and paid for!`);
+	        }, 2000);
+	    });
+
+	    let makeOrder = new Promise((resolve, reject) => {
+	        setTimeout(function() {
+	            resolve(`Coffee of type ${type} is ready!`);
+	        }, 4000);
+	    });
+
+	    return Promise.all([orderAndPay, makeOrder]);
+
+	};
+
+	getCoffee("espresso").then((data) => {
+	    console.log(data[0]);
+	    console.log(data[1]);
+	    console.log("You now have a coffee!");
+	}).catch((err) => {
+	    console.log(err)
+	});
 
 
 
@@ -275,7 +259,7 @@
 	// const getColor = () => Promise.race([color1Promise, color2Promise]);
 	//
 	// getColor().then(response => response.json()).then(data => console.log(data));
-	//
+
 
 
 
