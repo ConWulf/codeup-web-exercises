@@ -37,7 +37,7 @@ $(document).ready(function () {
         .addTo(map);
 
     //function to set the weather on marker drag
-    function getDataOnMove() {
+     const getDataOnMove = () => {
         marker.on("dragend", function () {
             let getCoordinates = this.getLngLat();
             renderFiveDayWeather(getCoordinates.lng, getCoordinates.lat);
@@ -119,7 +119,7 @@ $(document).ready(function () {
                 }
             }
             currentWeather.html(currentWeatherData(data.current))
-            console.log(data);
+            // console.log(data);
         }).fail(() => {
             weatherCard.html(`<h3>we cannot find that location</h3>`);
         });
@@ -129,16 +129,16 @@ $(document).ready(function () {
 
     //function to get location name, returns promise
     function reverseGeocode(coordinates, token) {
-        let baseUrl = 'https://api.mapbox.com';
-        let endPoint = '/geocoding/v5/mapbox.places/';
+        const baseUrl = 'https://api.mapbox.com';
+        const endPoint = '/geocoding/v5/mapbox.places/';
         return fetch(baseUrl + endPoint + coordinates.lng + "," + coordinates.lat + '.json' + "?" + 'access_token=' + token)
             .then(function (res) {
                 return res.json();
             })
             // to get all the data from the request, comment out the following three lines...
-            .then(function (data) {
-                return data.features[2].place_name;
-            });
+            // .then(function (data) {
+            //     return data.features[2].place_name;
+            // });
     }
 
     reverseGeocode({lng: -98.49, lat: 29.42}, mapboxKey).then(result => {
@@ -158,8 +158,12 @@ $(document).ready(function () {
     marker.on("dragend", function () {
         let getCoordinates = this.getLngLat();
         reverseGeocode({lng: getCoordinates.lng, lat: getCoordinates.lat}, mapboxKey).then(result => {
-            location.text(result);
+            // location.text(result);
+            console.log(result);
         })
+            .catch(err => {
+
+            })
     });
 
     //remove and marker and reset it on the searched point
