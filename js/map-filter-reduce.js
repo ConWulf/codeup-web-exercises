@@ -38,40 +38,58 @@
         }
     ];
 
-    let languages = users.filter((user) => user.languages.length >= 3);
+    // const languages = users.filter((user) => user.languages.length >= 3);
     // console.log(languages);
 
-    let emails = users.map(user => user.email);
+    // const emails = users.map(user => user.email);
+    // const emails = users.map(({email}) => email);
     // console.log(emails);
 
-    let totalYearsExp = users.reduce((totalYears, currentYear) => (totalYears + currentYear.yearsOfExperience), 0)/users.length
+    const totalYearsExp = users.reduce((totalYears, currentYear) => (totalYears + currentYear.yearsOfExperience), 0)/users.length
     // console.log(totalYearsExp);
 
 
-    // let longestEmail = emails.reduce((longest, currentEmailLength) =>  longest.length > currentEmailLength.length ? longest: currentEmailLength)
+    // const longestEmail = emails.reduce((longest, currentEmailLength) =>  (longest.length > currentEmailLength.length) ? longest: currentEmailLength)
 
-    // let longestEmail2 = users.reduce((longest, currentEmailLength) => longest.length > currentEmailLength.email.length ? longest: currentEmailLength.email, "");
+    // const longestEmail2 = users.reduce((longest, currentEmailLength) => (longest.length > currentEmailLength.email.length) ? longest: currentEmailLength.email, "");
+    // console.log(longestEmail2);
+
+    // const longestEmail2 = users.reduce((longest, {email}) => {
+    //     if (longest.length > email.length) {
+    //         return longest;
+    //     } else {
+    //         return email
+    //     }
+    // }, "");
     // console.log(longestEmail2);
 
     // console.log(longestEmail);
 
-    // let mapNames = `Your instructors are: ${users.map(user => user.name)}.`
+    // const mapNames = `Your instructors are: ${users.map(user => user.name)}.`
     //
     // console.log(mapNames);
 
-    let names = `${users.reduce((names, currentName) => `${names}, ${currentName.name}`, "Your instructors are:")}.`.replace(",", "")
+    const names = users.reduce((names, {name}) => `${names}, ${name}`, "Your instructors are:")
+        .replace(",", "")
+        .concat('.')
+    // const names2 = users.reduce((names, {name}) => `${names} ${name},`, "Your instructors are:").slice(0, -1).concat(".")
 
     console.log(names);
+    // console.log(names2);
 
-let languagesSet = new Set();
-let uniqueLanguages = users.reduce((lang, currentLanguage) => {
+const languagesSet = new Set();
+const uniqueLanguages = users.reduce((lang, currentLanguage) => {
    currentLanguage.languages.forEach(language => languagesSet.add(language))
-    console.log(lang);
     return Array.from(languagesSet)
 }, []);
 
+    const uniqueLanguages2 = users.reduce((langSet, currentLanguage) => {
+        currentLanguage.languages.forEach(language => langSet.add(language))
+        return langSet;
+    }, new Set);
 
     console.log(uniqueLanguages);
+    console.log(Array.from(uniqueLanguages2));
 
 
 })();

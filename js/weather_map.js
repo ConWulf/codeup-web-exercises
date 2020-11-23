@@ -47,10 +47,10 @@ $(document).ready(function () {
 
     //function to set current data
     const currentWeatherData = weatherObj =>
-        `<div class="card border-0 " id="currentWeather">
+        `<div class="card border-0 d-flex flex-column" id="currentWeather">
+                <h5 class="card-subtitle mb-2 text-muted align-self-end">${dates(weatherObj.dt)}</h5>
+                <h6 class="card-subtitle mb-2 text-muted align-self-end">${times(weatherObj.dt)}</h6>
             <div class="card-body">
-            <h5 class="card-subtitle mb-2 text-muted">${dates(weatherObj.dt)}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">${times(weatherObj.dt)}</h6>
                 <p class="card-text">Temperature: ${weatherObj.temp}°F</p>
                 ${weatherDescription(weatherObj.weather)}
                 <p class="card-text">Humidity: ${weatherObj.humidity}%</p>
@@ -87,7 +87,7 @@ $(document).ready(function () {
     }
 
     //function to get time
-    const times = unixTime => {
+    const times = (unixTime) => {
         let milliseconds = unixTime * 1000;
         let dateObj = new Date(milliseconds);
         let options = {hour: "numeric", minute: "numeric", second: "numeric", timeZoneName: "short"}
@@ -180,15 +180,15 @@ $(document).ready(function () {
         });
     });
 
-    // $(window).scroll(function () {
-    //     const scrollChangePos = $(this).scrollTop();
-    //     if (scrollChangePos > scrollInitialPos) {
-    //         $('.navigation').slideUp('fast')
-    //     } else {
-    //         $('.navigation').slideDown('fast');
-    //     }
-    //     scrollInitialPos = scrollChangePos;
-    // });
+    $(window).scroll(function () {
+        const scrollChangePos = $(this).scrollTop();
+        if (scrollChangePos > scrollInitialPos) {
+            $('.navigation').slideUp('fast')
+        } else {
+            $('.navigation').slideDown('fast');
+        }
+        scrollInitialPos = scrollChangePos;
+    });
 
 
 });
