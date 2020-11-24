@@ -19,12 +19,14 @@
         fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': githubKey}})
             .then(result => result.json())
             .then(data => data.filter(event => event.type === "PushEvent"))
-            // .then(data => new Date(data[0].created_at).toLocalString())
+            // .then(data => console.log(data.reduce((timeAcc, {created_at}) =>
+            //         new Date(created_at).getTime() > timeAcc ? new Date(created_at)
+            //         .toLocaleString(): new Date(timeAcc).toLocaleString()
+            // , 0)))
             .then(data => fetch(`${data[0].repo.url}/commits`))
             .then(result => result.json())
-            .then(data => new Date(data[0].commit.author.date).toLocaleString())
-
-            .catch(console.log)
+            .then(data => data.reduce((timeAcc, {commit: {author: {date}}}) =>
+                new Date(date).getTime() > timeAcc ? new Date(date).toLocaleString(): new Date(timeAcc).toLocaleString(), 0))
 
     lastPush("ConWulf")
         .then(console.log)
