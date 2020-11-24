@@ -114,7 +114,7 @@ $(document).ready(function () {
             units: "imperial"
         }).done(data => {
             for (const [i, days] of data.daily.entries()) {
-                 if (i > 0 ) {
+                 if (i > 0) {
                     weatherCard.append(fiveDayWeatherData(days));
                 }
             }
