@@ -15,22 +15,39 @@
    //
    //  lastCommit('ConWulf', "codeup-web-exercises")
 
-    const lastPush = (username) =>
-        fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': githubKey}})
-            .then(result => result.json())
-            .then(data => data.filter(event => event.type === "PushEvent"))
-            // .then(data => console.log(data.reduce((timeAcc, {created_at}) =>
-            //         new Date(created_at).getTime() > timeAcc ? new Date(created_at)
-            //         .toLocaleString(): new Date(timeAcc).toLocaleString()
-            // , 0)))
-            .then(data => fetch(`${data[0].repo.url}/commits`))
-            .then(result => result.json())
-            .then(data => data.reduce((timeAcc, {commit: {author: {date}}}) =>
-                new Date(date).getTime() > timeAcc ? new Date(date).toLocaleString(): new Date(timeAcc).toLocaleString(), 0))
+    // const lastPush = (username) =>
+    //     fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': githubKey}})
+    //         .then(result => result.json())
+    //         .then(data => data.filter(event => event.type === "PushEvent"))
+    //         // .then(data => console.log(data.reduce((timeAcc, {created_at}) =>
+    //         //         new Date(created_at).getTime() > timeAcc ? new Date(created_at)
+    //         //         .toLocaleString(): new Date(timeAcc).toLocaleString()
+    //         // , 0)))
+    //         .then(data => fetch(`${data[0].repo.url}/commits`))
+    //         .then(result => result.json())
+    //         .then(data => data.reduce((timeAcc, {commit: {author: {date}}}) =>
+    //             new Date(date).getTime() > timeAcc ? new Date(date).toLocaleString(): new Date(timeAcc).toLocaleString(), 0))
+
+    const lastPush = async (username) => {
+        try {
+            let events = await fetch(`https://api.github.com/users/${username}/events`, {headers: {'Authorization': githubKey}});
+            events = await events.json();
+            events = await events.filter(event => event.type === "PushEvent");
+              return await  events.reduce((timeAcc, {created_at}) =>
+                        new Date(created_at).getTime() > timeAcc ? new Date(created_at)
+                        .toLocaleString(): new Date(timeAcc).toLocaleString()
+                , 0);
+            // events = await fetch(`${events[0].repo.url}/commits`, {headers: {'Authorization': githubKey}});
+            // events = await events.json();
+            //     return await events.reduce((timeAcc, {commit: {author: {date}}}) =>
+            //         new Date(date).getTime() > timeAcc ? new Date(date).toLocaleString() : new Date(timeAcc).toLocaleString(), 0)
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     lastPush("ConWulf")
         .then(console.log)
-
 
     /*    Write a function named wait that accepts a number as a parameter, and returns a promise that resolves after the passed number of milliseconds.
 
