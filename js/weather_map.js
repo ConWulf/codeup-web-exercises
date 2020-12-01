@@ -168,8 +168,9 @@ $(document).ready(function () {
 
     //remove and marker and reset it on the searched point
     geocoder.on("result", function (result) {
+        console.log(result);
         marker.remove();
-        marker = new mapboxgl.Marker(markerStyle)
+            marker
             .setLngLat([result.result.center[0], result.result.center[1]])
             .addTo(map);
         renderFiveDayWeather(result.result.center[0], result.result.center[1]);
